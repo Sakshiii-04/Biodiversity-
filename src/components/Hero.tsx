@@ -126,19 +126,19 @@ export const Hero: React.FC<HeroProps> = ({
               : 'bg-[#E4F4F5] border-[#1FB6C9]/25 text-[#0B3A4A]'
           }`}>
             <span className="w-2.5 h-2.5 rounded-full bg-[#1FB6C9] animate-pulse" />
-            {dict?.heroEyebrow || 'GLOBAL WILDLIFE INTELLIGENCE'}
+            {dict?.heroEyebrow || 'INDIA-FIRST MULTIMODAL WILDLIFE TRADE INTELLIGENCE'}
           </div>
 
           {/* Cormorant Garamond Main Headline: Bold & Clean (Decreased by 4px per user request) */}
           <h1 className={`font-serif text-[32px] sm:text-[38px] lg:text-[48px] xl:text-[54px] font-bold leading-[1.08] tracking-tight ${
             darkMode ? 'text-white' : 'text-[#0B3A4A]'
           }`}>
-            {dict?.heroTitleLine1 || 'Protect the wild.'}
+            {dict?.heroTitleLine1 || 'The Wild Is Under Threat.'}
             <br />
             <span className={`italic font-bold relative ${darkMode ? 'text-[#E4F4F5]' : 'text-[#0B3A4A]'}`}>
-              {dict?.heroTitleLine2Pre || 'Preserve our '}
+              {dict?.heroTitleLine2Pre || 'We Follow the '}
               <span className="text-[#1FB6C9] not-italic">
-                {dict?.heroTitleLine2Highlight || 'living Earth.'}
+                {dict?.heroTitleLine2Highlight || 'Digital Trail.'}
               </span>
             </span>
           </h1>
@@ -147,7 +147,7 @@ export const Hero: React.FC<HeroProps> = ({
           <p className={`text-[15px] sm:text-[17px] font-medium leading-relaxed max-w-md ${
             darkMode ? 'text-[#CBD5E1]' : 'text-[#3A5A64]'
           }`}>
-            {dict?.heroDescription || "Explore Earth's biodiversity hotspots, uncover reported wildlife crime incidents, and identify the digital traces of illegal wildlife trade."}
+            {dict?.heroDescription || 'Illegal wildlife trade is increasingly moving into digital spaces. WILDINTEL uses AI-assisted text and image analysis to identify suspicious wildlife-trade content and support evidence-based investigations.'}
           </p>
 
           {/* Action CTAs (Increased by 3px) */}
@@ -184,7 +184,7 @@ export const Hero: React.FC<HeroProps> = ({
               <div className={`text-[12px] uppercase font-bold tracking-wider mt-0.5 ${
                 darkMode ? 'text-[#8AAFB8]' : 'text-[#6E8890]'
               }`}>
-                {dict?.statHotspotsLabel || 'Hotspots Mapped'}
+                {dict?.statHotspotsLabel || 'Hotspots Monitored'}
               </div>
             </div>
             <div>
@@ -194,7 +194,7 @@ export const Hero: React.FC<HeroProps> = ({
               <div className={`text-[12px] uppercase font-bold tracking-wider mt-0.5 ${
                 darkMode ? 'text-[#8AAFB8]' : 'text-[#6E8890]'
               }`}>
-                {dict?.statSeizedLabel || 'Tonnes Seized'}
+                {dict?.statSeizedLabel || 'Seizure Records Mapped'}
               </div>
             </div>
             <div>
@@ -204,7 +204,7 @@ export const Hero: React.FC<HeroProps> = ({
               <div className={`text-[12px] uppercase font-bold tracking-wider mt-0.5 ${
                 darkMode ? 'text-[#8AAFB8]' : 'text-[#6E8890]'
               }`}>
-                {dict?.statPrecisionLabel || 'AI Precision'}
+                {dict?.statPrecisionLabel || 'Detection Precision'}
               </div>
             </div>
           </div>

@@ -4,24 +4,24 @@ import { ShieldCheck, HeartHandshake, Award, FileText, Globe, CheckCircle } from
 export const ConservationImpact: React.FC = () => {
   const partners = [
     {
+      name: 'WCCB India',
+      role: 'Wildlife Crime Control Bureau',
+      desc: 'Statutory body under MoEFCC combating organized wildlife crime across India and coordinating with state forest departments.'
+    },
+    {
       name: 'CITES',
       role: 'Convention on International Trade in Endangered Species',
-      desc: 'Appendices I, II, and III trade compliance and scientific export validation.'
+      desc: 'Appendices I, II, and III protection categories and scientific cross-border compliance framework.'
     },
     {
-      name: 'TRAFFIC',
+      name: 'TRAFFIC India',
       role: 'Wildlife Trade Monitoring Network',
-      desc: 'Global monitoring of legal and illegal trade in wild animals and plants.'
-    },
-    {
-      name: 'INTERPOL',
-      role: 'Environmental Security Programme',
-      desc: 'Transnational policing support and coordinated red notice operations.'
+      desc: 'Global monitoring and investigative analysis of illicit commercial trade in wild flora and fauna.'
     },
     {
       name: 'IUCN Red List',
       role: 'Species Survival Commission',
-      desc: 'Authoritative global taxonomy assessment and extinction threat indexes.'
+      desc: 'Authoritative global taxonomy assessment and species biological extinction risk indices.'
     }
   ];
 
@@ -35,32 +35,32 @@ export const ConservationImpact: React.FC = () => {
         <div className="relative z-10 grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
           <div className="lg:col-span-7 space-y-5">
             <span className="inline-block px-4 py-1.5 rounded-full bg-[#1FB6C9]/20 text-[#9BF0FB] text-xs uppercase font-bold tracking-widest border border-[#1FB6C9]/40">
-              Ethical AI & Enforcement Charter
+              FORENSIC ETHICS & INVESTIGATIVE STANDARDS
             </span>
             <h2 className="font-serif text-4xl sm:text-5xl lg:text-6xl text-white font-normal leading-[1.1]">
-              Technology in service of <span className="italic text-[#9BF0FB]">living biodiversity.</span>
+              Evidence-based intelligence in service of <span className="italic text-[#9BF0FB]">species conservation.</span>
             </h2>
             <p className="text-base text-[#E4F4F5]/85 leading-relaxed">
-              We uphold strict ethical standards. Our AI models function as investigative signals to assist authorized anti-poaching teams and customs authorities. We never automate judicial accusations; every digital alert adheres to the CITES verification workflow.
+              WILDINTEL operates with a strict human-in-the-loop ethos. Every AI alert provides structured evidence—including species taxonomy, detected trade indicators, and confidence ratings—to assist WCCB, forest departments, and NGO analysts. The platform flags suspected wildlife product sales for verification without making automated judicial accusations.
             </p>
           </div>
 
           <div className="lg:col-span-5 grid grid-cols-2 gap-4">
             <div className="bg-white/10 backdrop-blur-md p-5 rounded-2xl border border-white/10 space-y-1">
               <span className="font-serif text-3xl font-bold text-[#FF7E6B]">100%</span>
-              <div className="text-xs text-[#E4F4F5]/80 font-medium">Non-Accusatory Verification Framework</div>
+              <div className="text-xs text-[#E4F4F5]/80 font-medium">Mandatory Human Review Before Reporting</div>
             </div>
             <div className="bg-white/10 backdrop-blur-md p-5 rounded-2xl border border-white/10 space-y-1">
               <span className="font-serif text-3xl font-bold text-[#1FB6C9]">36k+</span>
-              <div className="text-xs text-[#E4F4F5]/80 font-medium">CITES Listed Species Indexed</div>
+              <div className="text-xs text-[#E4F4F5]/80 font-medium">CITES Listed Species Grounded</div>
             </div>
             <div className="bg-white/10 backdrop-blur-md p-5 rounded-2xl border border-white/10 space-y-1">
-              <span className="font-serif text-3xl font-bold text-[#9BF0FB]">24/7</span>
-              <div className="text-xs text-[#E4F4F5]/80 font-medium">Automated Content Monitoring</div>
+              <span className="font-serif text-3xl font-bold text-[#9BF0FB]">100+</span>
+              <div className="text-xs text-[#E4F4F5]/80 font-medium">Languages & Codeword Dialects</div>
             </div>
             <div className="bg-white/10 backdrop-blur-md p-5 rounded-2xl border border-white/10 space-y-1">
               <span className="font-serif text-3xl font-bold text-white">0%</span>
-              <div className="text-xs text-[#E4F4F5]/80 font-medium">Fabricated Intelligence Tolerance</div>
+              <div className="text-xs text-[#E4F4F5]/80 font-medium">Automated Accusations or Hallucinated Flags</div>
             </div>
           </div>
         </div>

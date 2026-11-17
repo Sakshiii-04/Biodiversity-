@@ -6,6 +6,7 @@ import { DetectionSection } from './components/Detection/DetectionSection';
 import { AnalyticsDashboard } from './components/Dashboard/AnalyticsDashboard';
 import { ArchitectureSection } from './components/Architecture/ArchitectureSection';
 import { ConservationImpact } from './components/Impact/ConservationImpact';
+import { CaseStudyResults } from './components/CaseStudyResults';
 import { Footer } from './components/Footer';
 
 import { BIODIVERSITY_HOTSPOTS } from './data/hotspotsData';
@@ -76,6 +77,12 @@ export function App() {
             <Mission
               onDetectClick={() => handleNavigatePage('detect')}
               onExploreEarthClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
+            />
+
+            {/* Elo One Visual Case Studies / Enforcement Results Section */}
+            <CaseStudyResults
+              onNavigateToDetect={() => handleNavigatePage('detect')}
+              onNavigateToDashboard={() => handleNavigatePage('dashboard')}
             />
 
             {/* Conservation Impact & Ethical AI Pledge */}

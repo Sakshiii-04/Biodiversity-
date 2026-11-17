@@ -25,19 +25,19 @@ export const Footer: React.FC<FooterProps> = ({ onNavigate }) => {
                   WILD<span className="text-[#1FB6C9]">INTEL</span>
                 </span>
                 <span className="text-[9px] uppercase tracking-widest font-bold text-[#9BF0FB] block mt-0.5">
-                  Planetary Wildlife Intelligence
+                  India-First Multimodal Wildlife Intelligence
                 </span>
               </div>
             </div>
 
             <p className="text-xs text-[#E4F4F5]/75 leading-relaxed pr-4">
-              An open planetary platform combining satellite Earth observation, verified historical crime datasets, and ethical multimodal AI to detect and combat digital illegal wildlife trade.
+              India-first multimodal illegal wildlife trade detection and intelligence platform combining interactive 3D incident mapping, verified historical crime datasets, CITES-grounded taxonomy, and evidence-based AI decision support.
             </p>
 
             <div className="pt-2">
               <span className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white/10 text-white text-[11px] border border-white/10">
                 <ShieldAlert className="w-3.5 h-3.5 text-[#FF7E6B]" />
-                Emergency Hotline: TRAFFIC & WCCB Portal
+                Enforcement Portal: WCCB India & CITES
               </span>
             </div>
           </div>
@@ -105,6 +105,16 @@ export const Footer: React.FC<FooterProps> = ({ onNavigate }) => {
               Regulatory Frameworks
             </span>
             <ul className="space-y-2 text-xs text-[#E4F4F5]/80">
+              <li>
+                <a
+                  href="http://wccb.gov.in"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="hover:text-[#1FB6C9] transition-colors inline-flex items-center gap-1"
+                >
+                  WCCB (Govt. of India) <ExternalLink className="w-3 h-3 text-white/50" />
+                </a>
+              </li>
               <li>
                 <a
                   href="https://cites.org/eng/app/appendices.php"

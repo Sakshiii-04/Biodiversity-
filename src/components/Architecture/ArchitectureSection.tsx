@@ -277,7 +277,7 @@ export const ArchitectureSection: React.FC<ArchitectureSectionProps> = ({ darkMo
           <h2 className={`text-center font-serif text-2xl sm:text-3xl font-bold tracking-tight ${
             darkMode ? 'text-white' : 'text-[#0B3A4A]'
           }`}>
-            What We Bring
+            Core System Pillars
           </h2>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
@@ -288,12 +288,12 @@ export const ArchitectureSection: React.FC<ArchitectureSectionProps> = ({ darkMo
                 darkMode ? 'text-white' : 'text-[#0B3A4A]'
               }`}>
                 <Workflow className={`w-4 h-4 ${darkMode ? 'text-[#9BF0FB]' : 'text-[#1E6544]'}`} />
-                Intelligent Agent System
+                Human-in-the-Loop Triage
               </h3>
               <p className={`text-xs leading-relaxed ${
                 darkMode ? 'text-[#CBD5E1]' : 'text-[#334155]'
               }`}>
-                Autonomous multi-agent forensic triage, cross-modal verification, and prioritized alert routing for intelligence analysts.
+                All flagged listings route into an investigator queue. The system flags suspected wildlife trade, strictly avoiding automated accusations.
               </p>
             </div>
 
@@ -304,12 +304,12 @@ export const ArchitectureSection: React.FC<ArchitectureSectionProps> = ({ darkMo
                 darkMode ? 'text-white' : 'text-[#0B3A4A]'
               }`}>
                 <Eye className={`w-4 h-4 ${darkMode ? 'text-[#9BF0FB]' : 'text-[#1E6544]'}`} />
-                Computer Vision Stack
+                Multimodal Dual Pipeline
               </h3>
               <p className={`text-xs leading-relaxed ${
                 darkMode ? 'text-[#CBD5E1]' : 'text-[#334155]'
               }`}>
-                Fine-grained CITES fauna identification, body-part segmentation (tusks, scales, pelts), and disguised shipping recognition.
+                Simultaneous image and text evaluation to detect CITES species, derivatives (scales, ivory, skins), and concealed delivery signals.
               </p>
             </div>
 
@@ -320,12 +320,12 @@ export const ArchitectureSection: React.FC<ArchitectureSectionProps> = ({ darkMo
                 darkMode ? 'text-white' : 'text-[#0B3A4A]'
               }`}>
                 <Network className={`w-4 h-4 ${darkMode ? 'text-[#9BF0FB]' : 'text-[#1E6544]'}`} />
-                Temporal Confidence Scoring
+                Bayesian Confidence Model
               </h3>
               <p className={`text-xs leading-relaxed ${
                 darkMode ? 'text-[#CBD5E1]' : 'text-[#334155]'
               }`}>
-                Multi-frame post evolution analysis, seller network reputation decay, and cross-platform listing correlation over time.
+                Probabilistic confidence scoring calculating joint likelihood across species matches, keyword triggers, and logistical indicators.
               </p>
             </div>
 
@@ -336,12 +336,12 @@ export const ArchitectureSection: React.FC<ArchitectureSectionProps> = ({ darkMo
                 darkMode ? 'text-white' : 'text-[#0B3A4A]'
               }`}>
                 <ShieldCheck className={`w-4 h-4 ${darkMode ? 'text-[#9BF0FB]' : 'text-[#1E6544]'}`} />
-                Context-Engineered AI
+                CITES Grounded Taxonomy
               </h3>
               <p className={`text-xs leading-relaxed ${
                 darkMode ? 'text-[#CBD5E1]' : 'text-[#334155]'
               }`}>
-                Grounded CITES Appendices I/II/III taxonomy, zero-hallucination verification loops, and evidentiary chain-of-custody output.
+                Grounded CITES Appendices I/II/III taxonomy database preventing ungrounded assertions and producing structured forensic dossiers.
               </p>
             </div>
           </div>
@@ -352,7 +352,7 @@ export const ArchitectureSection: React.FC<ArchitectureSectionProps> = ({ darkMo
           <h2 className={`text-center font-serif text-2xl sm:text-3xl font-bold tracking-tight ${
             darkMode ? 'text-white' : 'text-[#0B3A4A]'
           }`}>
-            Technical Architecture
+            Implementation Architecture & Roadmap
           </h2>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-5">
@@ -362,17 +362,17 @@ export const ArchitectureSection: React.FC<ArchitectureSectionProps> = ({ darkMo
               <div className={`text-xs font-bold uppercase tracking-wider mb-2 ${
                 darkMode ? 'text-[#9BF0FB]' : 'text-[#1E6544]'
               }`}>
-                Frontend
+                Phase 1: Live Prototype (Current)
               </div>
               <div className={`font-bold text-sm mb-2 ${
                 darkMode ? 'text-white' : 'text-[#0B3A4A]'
               }`}>
-                React 19 + TypeScript + Vite + Tailwind CSS v4
+                React 19 + TypeScript + Three.js + Heuristic Engine
               </div>
               <p className={`text-xs leading-relaxed ${
                 darkMode ? 'text-[#CBD5E1]' : 'text-[#334155]'
               }`}>
-                Hardware-accelerated Three.js 3D Interactive Earth with procedural bathymetry textures, dynamic camera controls, and responsive UI components.
+                Operational client application featuring 3D Three.js incident globe, deterministic CITES rulesets, indicator parsing, Bayesian confidence scoring, and case CSV export.
               </p>
             </div>
 
@@ -382,17 +382,17 @@ export const ArchitectureSection: React.FC<ArchitectureSectionProps> = ({ darkMo
               <div className={`text-xs font-bold uppercase tracking-wider mb-2 ${
                 darkMode ? 'text-[#9BF0FB]' : 'text-[#1E6544]'
               }`}>
-                Backend & Ingestion
+                Optional Integration (Live Demo)
               </div>
               <div className={`font-bold text-sm mb-2 ${
                 darkMode ? 'text-white' : 'text-[#0B3A4A]'
               }`}>
-                Node / Express + Python Proxy + REST Endpoints
+                Google Gemini 1.5 Multimodal Vision API
               </div>
               <p className={`text-xs leading-relaxed ${
                 darkMode ? 'text-[#CBD5E1]' : 'text-[#334155]'
               }`}>
-                Scalable asynchronous pipeline handling image normalization, metadata extraction, forensic caching, and real-time incident logging.
+                Optional client-side API key configuration enabling direct browser multimodal OCR and visual examination without requiring a mandatory cloud server backend.
               </p>
             </div>
 
@@ -402,17 +402,17 @@ export const ArchitectureSection: React.FC<ArchitectureSectionProps> = ({ darkMo
               <div className={`text-xs font-bold uppercase tracking-wider mb-2 ${
                 darkMode ? 'text-[#9BF0FB]' : 'text-[#1E6544]'
               }`}>
-                AI / ML Engine
+                Phase 2 & 3: Planned Backend & ML Roadmap
               </div>
               <div className={`font-bold text-sm mb-2 ${
                 darkMode ? 'text-white' : 'text-[#0B3A4A]'
               }`}>
-                Gemini 1.5 Vision + CITES Appendices Heuristics
+                XLM-RoBERTa + CLIP / YOLOv8 + FastAPI Backend
               </div>
               <p className={`text-xs leading-relaxed ${
                 darkMode ? 'text-[#CBD5E1]' : 'text-[#334155]'
               }`}>
-                Multimodal visual understanding combined with heuristic OCR keyword taxonomy, CITES protection tier matching, and calibrated threat confidence.
+                Planned architecture: fine-tuned XLM-RoBERTa text model for 100 languages & Indian codewords (*hathajodi*), zero-shot CLIP/YOLOv8 vision, FastAPI server, Redis queue, and Playwright crawler.
               </p>
             </div>
           </div>
@@ -490,12 +490,12 @@ export const ArchitectureSection: React.FC<ArchitectureSectionProps> = ({ darkMo
                   darkMode ? 'text-white' : 'text-[#0B3A4A]'
                 }`}>
                   <Network className={`w-4 h-4 ${darkMode ? 'text-[#9BF0FB]' : 'text-[#1E6544]'}`} />
-                  Temporal Aggregation
+                  Bayesian Evidence Scoring (Implemented)
                 </h3>
                 <p className={`text-xs sm:text-sm leading-relaxed ${
                   darkMode ? 'text-[#CBD5E1]' : 'text-[#334155]'
                 }`}>
-                  Real-time time-series analysis with temporal aggregation. POI / Changepoint analysis prevents transient false-positives and builds cumulative conviction across multi-image posts and revolving seller profiles.
+                  Operational Bayesian confidence model fusing multi-node signals: species keyword matches, CITES protection tier, off-platform messaging cues, and evasive delivery promises into a joint conviction metric.
                 </p>
               </div>
             </div>
@@ -511,7 +511,7 @@ export const ArchitectureSection: React.FC<ArchitectureSectionProps> = ({ darkMo
                 <div className={`text-center font-bold pb-2 border-b ${
                   darkMode ? 'text-[#9BF0FB] border-[#1FB6C9]/20' : 'text-[#1E6544] border-[#2F7D58]/25'
                 }`}>
-                  2-Step Dual-Agent Routing with Evidence Verification Loop
+                  Multilingual NLP & Slang Resolution Pipeline (Roadmap)
                 </div>
                 
                 <div className="grid grid-cols-2 gap-3 py-3 text-center">
@@ -519,26 +519,26 @@ export const ArchitectureSection: React.FC<ArchitectureSectionProps> = ({ darkMo
                     darkMode ? 'bg-[#0B2533] border-[#1FB6C9]/30' : 'bg-white border-[#2F7D58]/35'
                   }`}>
                     <div className={`text-[10px] uppercase font-bold ${darkMode ? 'text-[#9BF0FB]' : 'text-[#1E6544]'}`}>
-                      Agent 1: Triage
+                      Stage 1: NLP
                     </div>
                     <div className={`text-[11px] font-bold ${darkMode ? 'text-white' : 'text-[#0B3A4A]'}`}>
-                      Intent & Slang Resolver
+                      XLM-RoBERTa Base
                     </div>
                     <div className={`text-[9px] mt-1 font-medium ${darkMode ? 'text-gray-400' : 'text-[#475569]'}`}>
-                      Parses dialect & emoji ciphers
+                      100 Languages & Hinglish
                     </div>
                   </div>
                   <div className={`p-2.5 rounded border ${
                     darkMode ? 'bg-[#0B2533] border-[#1FB6C9]/30' : 'bg-white border-[#2F7D58]/35'
                   }`}>
                     <div className={`text-[10px] uppercase font-bold ${darkMode ? 'text-[#9BF0FB]' : 'text-[#1E6544]'}`}>
-                      Agent 2: Auditor
+                      Stage 2: Lexicon
                     </div>
                     <div className={`text-[11px] font-bold ${darkMode ? 'text-white' : 'text-[#0B3A4A]'}`}>
-                      Forensic Verification
+                      Indian Codewords
                     </div>
                     <div className={`text-[9px] mt-1 font-medium ${darkMode ? 'text-gray-400' : 'text-[#475569]'}`}>
-                      Grounds species to CITES
+                      Hathajodi, White Bone, etc.
                     </div>
                   </div>
                 </div>
@@ -546,9 +546,9 @@ export const ArchitectureSection: React.FC<ArchitectureSectionProps> = ({ darkMo
                 <div className={`flex items-center justify-center gap-2 py-1 text-[10px] font-bold ${
                   darkMode ? 'text-[#9BF0FB]' : 'text-[#1E6544]'
                 }`}>
-                  <span>⇄ Bidirectional Thought Exchange</span>
+                  <span>⇄ Fast Keyword Dispatch</span>
                   <span>•</span>
-                  <span>Chain-of-Custody Verification ⇄</span>
+                  <span>Zero-Retrain Codeword Drift ⇄</span>
                 </div>
               </div>
 
@@ -557,12 +557,12 @@ export const ArchitectureSection: React.FC<ArchitectureSectionProps> = ({ darkMo
                   darkMode ? 'text-white' : 'text-[#0B3A4A]'
                 }`}>
                   <GitBranch className={`w-4 h-4 ${darkMode ? 'text-[#9BF0FB]' : 'text-[#1E6544]'}`} />
-                  A2A Agentic Architecture
+                  Multilingual Codeword Classification (Planned Roadmap)
                 </h3>
                 <p className={`text-xs sm:text-sm leading-relaxed ${
                   darkMode ? 'text-[#CBD5E1]' : 'text-[#334155]'
                 }`}>
-                  Dual-agent system with bidirectional routing: intent mapping to crime taxonomy and forensic guardrail alignment. Features Web Search and Thinking tools with Chain-of-Thought reasoning for transparent explainability.
+                  Phase 2 pipeline: fine-tuning XLM-RoBERTa across 100 languages to identify Hindi/Hinglish codewords (e.g., hathajodi = monitor lizard genitals) and obscure trade slang without retraining core weights.
                 </p>
               </div>
             </div>
@@ -616,12 +616,12 @@ export const ArchitectureSection: React.FC<ArchitectureSectionProps> = ({ darkMo
                   darkMode ? 'text-white' : 'text-[#0B3A4A]'
                 }`}>
                   <ShieldCheck className={`w-4 h-4 ${darkMode ? 'text-[#9BF0FB]' : 'text-[#1E6544]'}`} />
-                  Hallucination Prevention
+                  CITES Grounding & Hallucination Guard (Implemented)
                 </h3>
                 <p className={`text-xs sm:text-sm leading-relaxed ${
                   darkMode ? 'text-[#CBD5E1]' : 'text-[#334155]'
                 }`}>
-                  Multi-layer validation system combining context-engineered prompts and strict schema JSON enforcement. Passes detections through a verified CITES database loop to maintain forensic-grade evidentiary rigor.
+                  Operational multi-layer validation combining context-engineered prompts with verified CITES Appendices I–III taxonomy rulesets, ensuring that non-protected species or legal pets never trigger false accusations.
                 </p>
               </div>
             </div>
@@ -637,7 +637,7 @@ export const ArchitectureSection: React.FC<ArchitectureSectionProps> = ({ darkMo
                 <div className={`text-center font-bold pb-2 border-b ${
                   darkMode ? 'text-[#9BF0FB] border-[#1FB6C9]/20' : 'text-[#1E6544] border-[#2F7D58]/25'
                 }`}>
-                  Fine-Grained Fauna & Derivative Segmentation
+                  Fine-Grained Fauna & Derivative Segmentation (Roadmap)
                 </div>
                 
                 <div className="flex items-center justify-between gap-1.5 py-3 text-center">
@@ -651,15 +651,15 @@ export const ArchitectureSection: React.FC<ArchitectureSectionProps> = ({ darkMo
                   <div className={`p-2 rounded border ${
                     darkMode ? 'bg-[#0B2533] border-[#1FB6C9]/30' : 'bg-white border-[#2F7D58]/35'
                   }`}>
-                    <div className="text-[9px] text-gray-500 font-bold">Morphology</div>
-                    <div className={`text-[10px] font-bold ${darkMode ? 'text-white' : 'text-[#0B3A4A]'}`}>Part Classifier</div>
+                    <div className="text-[9px] text-gray-500 font-bold">Stage 1</div>
+                    <div className={`text-[10px] font-bold ${darkMode ? 'text-white' : 'text-[#0B3A4A]'}`}>CLIP Zero-Shot</div>
                   </div>
                   <div className="text-gray-400 font-bold">→</div>
                   <div className={`p-2 rounded border ${
                     darkMode ? 'bg-[#1FB6C9]/20 border-[#1FB6C9]' : 'bg-[#2F7D58]/15 border-[#1E6544]'
                   }`}>
-                    <div className={`text-[9px] font-bold ${darkMode ? 'text-[#9BF0FB]' : 'text-[#1E6544]'}`}>Output</div>
-                    <div className={`text-[10px] font-bold ${darkMode ? 'text-white' : 'text-[#0B3A4A]'}`}>CITES Dossier</div>
+                    <div className={`text-[9px] font-bold ${darkMode ? 'text-[#9BF0FB]' : 'text-[#1E6544]'}`}>Stage 2</div>
+                    <div className={`text-[10px] font-bold ${darkMode ? 'text-white' : 'text-[#0B3A4A]'}`}>YOLOv8 Boxes</div>
                   </div>
                 </div>
 
@@ -675,12 +675,12 @@ export const ArchitectureSection: React.FC<ArchitectureSectionProps> = ({ darkMo
                   darkMode ? 'text-white' : 'text-[#0B3A4A]'
                 }`}>
                   <Eye className={`w-4 h-4 ${darkMode ? 'text-[#9BF0FB]' : 'text-[#1E6544]'}`} />
-                  Computer Vision Pipeline
+                  Computer Vision & Derivative Segmentation (Planned Roadmap)
                 </h3>
                 <p className={`text-xs sm:text-sm leading-relaxed ${
                   darkMode ? 'text-[#CBD5E1]' : 'text-[#334155]'
                 }`}>
-                  Fine-tuned species identification with Gemini 1.5 Vision and morphological feature extraction. Analyzes packaging containers, obscured watermarks, and derivative parts for authentic contraband recognition.
+                  Phase 2/3 vision roadmap: zero-shot CLIP querying for parts/derivatives without labelled datasets, transitioning to fine-tuned YOLOv8 bounding box detection for pangolin scales, ivory, and skins.
                 </p>
               </div>
             </div>
@@ -693,36 +693,36 @@ export const ArchitectureSection: React.FC<ArchitectureSectionProps> = ({ darkMo
           <div className={`px-4 py-3 rounded-xl border text-center text-xs font-semibold shadow-xs ${
             darkMode ? 'bg-[#0B2533] border-[#1FB6C9]/30 text-[#9BF0FB]' : 'bg-white border-[#2F7D58]/30 text-[#0B3A4A]'
           }`}>
-            <div className="font-bold">Agentic AI</div>
+            <div className="font-bold">Phase 1 Implemented</div>
             <div className={`text-[10px] mt-0.5 font-medium ${darkMode ? 'text-[#B0D1DA]' : 'text-[#475569]'}`}>
-              Intent mapping & task routing
+              CITES Rules Engine & 3D Three.js
             </div>
           </div>
 
           <div className={`px-4 py-3 rounded-xl border text-center text-xs font-semibold shadow-xs ${
             darkMode ? 'bg-[#0B2533] border-[#1FB6C9]/30 text-[#9BF0FB]' : 'bg-white border-[#2F7D58]/30 text-[#0B3A4A]'
           }`}>
-            <div className="font-bold">Temporal Aggregation</div>
+            <div className="font-bold">Optional Integration</div>
             <div className={`text-[10px] mt-0.5 font-medium ${darkMode ? 'text-[#B0D1DA]' : 'text-[#475569]'}`}>
-              POI score drift & frame decay
+              Gemini 1.5 Multimodal Vision API
             </div>
           </div>
 
           <div className={`px-4 py-3 rounded-xl border text-center text-xs font-semibold shadow-xs ${
             darkMode ? 'bg-[#0B2533] border-[#1FB6C9]/30 text-[#9BF0FB]' : 'bg-white border-[#2F7D58]/30 text-[#0B3A4A]'
           }`}>
-            <div className="font-bold">Hallucination Guard</div>
+            <div className="font-bold">Phase 2 Text Model</div>
             <div className={`text-[10px] mt-0.5 font-medium ${darkMode ? 'text-[#B0D1DA]' : 'text-[#475569]'}`}>
-              Context-engineered CITES bounds
+              XLM-RoBERTa 100-Language NLP
             </div>
           </div>
 
           <div className={`px-4 py-3 rounded-xl border text-center text-xs font-semibold shadow-xs ${
             darkMode ? 'bg-[#0B2533] border-[#1FB6C9]/30 text-[#9BF0FB]' : 'bg-white border-[#2F7D58]/30 text-[#0B3A4A]'
           }`}>
-            <div className="font-bold">Computer Vision</div>
+            <div className="font-bold">Phase 2/3 Vision</div>
             <div className={`text-[10px] mt-0.5 font-medium ${darkMode ? 'text-[#B0D1DA]' : 'text-[#475569]'}`}>
-              Multi-modal fauna segmentation
+              Zero-Shot CLIP & YOLOv8 Boxes
             </div>
           </div>
         </div>

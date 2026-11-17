@@ -85,7 +85,7 @@ export const AnalyticsDashboard: React.FC<AnalyticsDashboardProps> = ({ records,
       <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-12">
         <div>
           <span className="inline-block px-4 py-1.5 rounded-full bg-[#E4F4F5] text-[#0B3A4A] text-[14px] uppercase font-bold tracking-widest border border-[#1FB6C9]/25 mb-3">
-            Real-Time Analytics & Enforcement Telemetry
+            INVESTIGATIVE TELEMETRY & AUDIT QUEUE
           </span>
           <h2 className={`font-serif text-[38px] sm:text-[48px] font-extrabold leading-tight tracking-tight ${
             darkMode ? 'text-white' : 'text-[#0B3A4A]'
@@ -93,7 +93,7 @@ export const AnalyticsDashboard: React.FC<AnalyticsDashboardProps> = ({ records,
             Intelligence <span className="italic text-[#1FB6C9] font-extrabold">Dashboard</span>
           </h2>
           <p className="mt-2 text-[17px] sm:text-[19px] text-[#3A5A64]">
-            Aggregated metrics derived from live content scanning, verified seizures, and CITES compliance investigations.
+            Consolidated metrics, species insights, and forensic case records generated from automated detection runs, trade indicator evaluations, and investigator review queues.
           </p>
         </div>
 
@@ -123,7 +123,7 @@ export const AnalyticsDashboard: React.FC<AnalyticsDashboardProps> = ({ records,
         {/* KPI 1: Total Posts Analyzed */}
         <div className="bg-white rounded-[28px] p-6 shadow-md border border-[#1FB6C9]/20 flex flex-col justify-between">
           <div className="flex items-center justify-between text-[#6E8890] text-xs uppercase tracking-wider font-semibold">
-            <span>Total Analyzed</span>
+            <span>Total Submissions Analysed</span>
             <div className="w-8 h-8 rounded-full bg-[#E4F4F5] flex items-center justify-center text-[#1FB6C9]">
               <Activity className="w-4 h-4" />
             </div>
@@ -141,7 +141,7 @@ export const AnalyticsDashboard: React.FC<AnalyticsDashboardProps> = ({ records,
         {/* KPI 2: Potential Illegal Wildlife Trade */}
         <div className="bg-white rounded-[28px] p-6 shadow-md border border-[#FF7E6B]/30 flex flex-col justify-between">
           <div className="flex items-center justify-between text-[#E86350] text-xs uppercase tracking-wider font-semibold">
-            <span>Potential Illicit Trade</span>
+            <span>Suspected Wildlife Trade</span>
             <div className="w-8 h-8 rounded-full bg-[#FF7E6B]/15 flex items-center justify-center text-[#FF7E6B]">
               <AlertTriangle className="w-4 h-4" />
             </div>
@@ -159,7 +159,7 @@ export const AnalyticsDashboard: React.FC<AnalyticsDashboardProps> = ({ records,
         {/* KPI 3: Requires Manual Review */}
         <div className="bg-white rounded-[28px] p-6 shadow-md border border-[#1FB6C9]/25 flex flex-col justify-between">
           <div className="flex items-center justify-between text-[#1693A3] text-xs uppercase tracking-wider font-semibold">
-            <span>Manual Review Queue</span>
+            <span>Pending Manual Review</span>
             <div className="w-8 h-8 rounded-full bg-[#E4F4F5] flex items-center justify-center text-[#1FB6C9]">
               <HelpCircle className="w-4 h-4" />
             </div>
@@ -177,7 +177,7 @@ export const AnalyticsDashboard: React.FC<AnalyticsDashboardProps> = ({ records,
         {/* KPI 4: No Clear Evidence Detected */}
         <div className="bg-white rounded-[28px] p-6 shadow-md border border-[#2F7D58]/25 flex flex-col justify-between">
           <div className="flex items-center justify-between text-[#2F7D58] text-xs uppercase tracking-wider font-semibold">
-            <span>Cleared / Legitimate</span>
+            <span>Verified Legitimate / Cleared</span>
             <div className="w-8 h-8 rounded-full bg-[#2F7D58]/15 flex items-center justify-center text-[#2F7D58]">
               <CheckCircle className="w-4 h-4" />
             </div>
@@ -203,7 +203,7 @@ export const AnalyticsDashboard: React.FC<AnalyticsDashboardProps> = ({ records,
                 Temporal Analysis
               </span>
               <h3 className="font-serif text-2xl font-medium text-[#0B3A4A]">
-                Detection Trends Over Time
+                Submission Trends
               </h3>
             </div>
             <div className="flex items-center gap-3 text-xs">
@@ -265,7 +265,7 @@ export const AnalyticsDashboard: React.FC<AnalyticsDashboardProps> = ({ records,
               Taxonomic Vulnerability
             </span>
             <h3 className="font-serif text-2xl font-medium text-[#0B3A4A]">
-              Most Targeted Wildlife
+              Species Insights
             </h3>
           </div>
 
@@ -303,10 +303,10 @@ export const AnalyticsDashboard: React.FC<AnalyticsDashboardProps> = ({ records,
         <div className="flex flex-col md:flex-row md:items-center justify-between gap-4 pb-4 border-b border-gray-100">
           <div>
             <span className="text-[10px] uppercase font-bold tracking-widest text-[#1FB6C9]">
-              Enforcement Log
+              Enforcement Log & Audit
             </span>
             <h3 className="font-serif text-2xl font-medium text-[#0B3A4A]">
-              Recent Content Submissions & Decisions
+              Detection Overview & Case Records
             </h3>
           </div>
 

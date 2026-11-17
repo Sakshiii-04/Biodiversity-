@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useRef } from 'react';
-import { Globe2, Sparkles, BarChart3, Layers, Menu, X, Sun, Moon, Languages } from 'lucide-react';
+import { Globe2, Sparkles, BarChart3, Menu, X, Sun, Moon, Languages } from 'lucide-react';
 import { SupportedLanguage, TranslationDictionary } from '../utils/translations';
 
 export type AppPage = 'home' | 'detect' | 'dashboard' | 'architecture';
@@ -54,11 +54,11 @@ export const Navigation: React.FC<NavigationProps> = ({
     return () => document.removeEventListener('mousedown', handleClickOutside);
   }, []);
 
-  const navLinks: { label: string; page: AppPage; icon?: any }[] = [
+  const navLinks: { label: string; page: AppPage }[] = [
     { label: dict?.navEarth || 'Earth & Mission', page: 'home' },
-    { label: dict?.navDetect || 'Wildlife Trade Detection', page: 'detect', icon: Sparkles },
-    { label: dict?.navDashboard || 'Intelligence Dashboard', page: 'dashboard', icon: BarChart3 },
-    { label: dict?.navArchitecture || 'Architecture & Research', page: 'architecture', icon: Layers },
+    { label: dict?.navDetect || 'Wildlife Trade Detection', page: 'detect' },
+    { label: dict?.navDashboard || 'Intelligence Dashboard', page: 'dashboard' },
+    { label: dict?.navArchitecture || 'Architecture & Research', page: 'architecture' },
   ];
 
   const handleLinkClick = (page: AppPage) => {
@@ -99,7 +99,7 @@ export const Navigation: React.FC<NavigationProps> = ({
             <span className={`text-[9px] uppercase tracking-widest font-bold block mt-0.5 ${
               darkMode ? 'text-[#9BF0FB]' : 'text-[#0B3A4A]/70'
             }`}>
-              {dict?.brandSubtitle || 'Global Wildlife Intelligence'}
+              {dict?.brandSubtitle || 'India-First Wildlife Intelligence'}
             </span>
           </div>
         </button>
@@ -116,7 +116,7 @@ export const Navigation: React.FC<NavigationProps> = ({
               <button
                 key={link.page}
                 onClick={() => handleLinkClick(link.page)}
-                className={`flex items-center gap-1.5 px-3.5 py-1.5 rounded-full text-[11px] font-bold uppercase tracking-wider transition-all cursor-pointer ${
+                className={`px-3.5 py-1.5 rounded-full text-[11px] font-bold uppercase tracking-wider transition-all cursor-pointer ${
                   isActive
                     ? darkMode
                       ? 'bg-[#1FB6C9] text-white shadow-md shadow-[#1FB6C9]/30'
@@ -126,11 +126,6 @@ export const Navigation: React.FC<NavigationProps> = ({
                       : 'text-[#0B3A4A] hover:text-[#1FB6C9] hover:bg-[#E4F4F5]'
                 }`}
               >
-                {link.icon && (
-                  <link.icon className={`w-3.5 h-3.5 ${
-                    isActive ? (darkMode ? 'text-white' : 'text-[#9BF0FB]') : 'text-[#1FB6C9]'
-                  }`} />
-                )}
                 <span className="font-bold tracking-wider">{link.label}</span>
               </button>
             );
@@ -250,13 +245,12 @@ export const Navigation: React.FC<NavigationProps> = ({
             <button
               key={link.page}
               onClick={() => handleLinkClick(link.page)}
-              className={`block w-full text-left py-2.5 px-4 rounded-xl text-xs font-bold uppercase tracking-wider flex items-center gap-2.5 ${
+              className={`block w-full text-left py-2.5 px-4 rounded-xl text-xs font-bold uppercase tracking-wider ${
                 currentPage === link.page
                   ? 'bg-[#1FB6C9] text-white'
                   : darkMode ? 'hover:bg-white/10' : 'hover:bg-white/60'
               }`}
             >
-              {link.icon && <link.icon className="w-4 h-4" />}
               <span>{link.label}</span>
             </button>
           ))}

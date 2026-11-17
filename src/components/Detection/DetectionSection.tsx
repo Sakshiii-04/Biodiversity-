@@ -194,15 +194,14 @@ export const DetectionSection: React.FC<DetectionSectionProps> = ({
         <h2 className={`font-serif text-[38px] sm:text-[48px] lg:text-[58px] font-extrabold leading-tight tracking-tight ${
           darkMode ? 'text-white' : 'text-[#0B3A4A]'
         }`}>
-          Wildlife Trade <span className="italic text-[#FF7E6B] font-extrabold">Detection</span>
+          Detect the Signals <span className="italic text-[#FF7E6B] font-extrabold">Hidden in Wildlife Trade.</span>
         </h2>
         <p className="mt-4 text-[18px] sm:text-[21px] text-[#3A5A64] leading-relaxed">
-          Submit suspicious social media posts or online listings. Our computer vision and multimodal intelligence system detects species taxonomy, disguised trafficking lexicons, and illicit trade signatures.
+          Submit suspicious social media posts or online marketplace listings via image upload or public URL. Our multimodal pipeline performs optical text extraction, protected species identification against CITES appendices, suspicious trade indicator detection, and confidence scoring to support forensic human verification.
         </p>
 
         {/* Engine Transparency Pill */}
-        <div className="mt-5 inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white/80 border border-[#1FB6C9]/20 text-[14px] text-[#3A5A64] shadow-sm">
-          <Sparkles className="w-3.5 h-3.5 text-[#1FB6C9]" />
+        <div className="mt-5 inline-flex items-center px-4 py-1.5 rounded-full bg-white/80 border border-[#1FB6C9]/20 text-[14px] text-[#3A5A64] shadow-sm">
           <span>
             Active Architecture: <strong className="text-[#0B3A4A]">{apiKey ? 'Gemini 1.5 Multimodal Vision API' : 'Production Heuristic Engine (Demo Mode)'}</strong>
           </span>
@@ -237,8 +236,8 @@ export const DetectionSection: React.FC<DetectionSectionProps> = ({
       {/* Quick Test Samples Selector */}
       <div className="mb-10 bg-white/80 backdrop-blur-sm p-4 sm:p-5 rounded-[28px] border border-[#1FB6C9]/20 shadow-sm">
         <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 mb-3">
-          <span className="text-xs uppercase font-bold tracking-widest text-[#0B3A4A] flex items-center gap-1.5">
-            <Sparkles className="w-4 h-4 text-[#FF7E6B]" /> Quick Preloaded Intelligence Test Cases
+          <span className="text-xs uppercase font-bold tracking-widest text-[#0B3A4A]">
+            Quick Preloaded Intelligence Test Cases
           </span>
           <span className="text-[11px] text-[#6E8890]">
             Click any sample to evaluate instant AI response
@@ -433,13 +432,13 @@ export const DetectionSection: React.FC<DetectionSectionProps> = ({
                 <ShieldCheck className="w-8 h-8" />
               </div>
               <h3 className="font-serif text-2xl text-[#0B3A4A] font-medium">
-                AI Intelligence Terminal Ready
+                Investigative Intelligence Terminal Ready
               </h3>
               <p className="text-sm text-[#6E8890] max-w-md mx-auto leading-relaxed">
-                Submit an image or post link to trigger automated species detection, CITES trade restriction checks, and disguised trafficking terminology extraction.
+                Submit a screenshot or public post link to trigger automated OCR text extraction, CITES-grounded species identification, suspicious trade terminology detection, and confidence scoring for human verification.
               </p>
               <div className="inline-block text-[11px] font-semibold text-[#1FB6C9] uppercase tracking-wider bg-[#E4F4F5]/70 px-4 py-1.5 rounded-full">
-                Waiting for input submission
+                Waiting for image or URL submission
               </div>
             </div>
           )}
