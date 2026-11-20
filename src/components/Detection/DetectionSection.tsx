@@ -186,28 +186,34 @@ export const DetectionSection: React.FC<DetectionSectionProps> = ({
 
   return (
     <section id="detect" className="py-24 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
-      {/* Eyebrow & Headline in Coralis Aesthetic */}
+      {/* Eyebrow & Headline in SAMRAKSH Aesthetic */}
       <div className="text-center max-w-3xl mx-auto mb-14">
-        <span className="inline-block px-4 py-1.5 rounded-full bg-[#E4F4F5] text-[#0B3A4A] text-[14px] uppercase font-bold tracking-widest border border-[#1FB6C9]/25 mb-3">
-          AI Intelligence Engine
-        </span>
-        <h2 className={`font-serif text-[38px] sm:text-[48px] lg:text-[58px] font-extrabold leading-tight tracking-tight ${
-          darkMode ? 'text-white' : 'text-[#0B3A4A]'
+        <span className={`inline-block px-4 py-1.5 rounded-full text-xs uppercase font-bold tracking-widest border mb-3 ${
+          darkMode ? 'bg-emerald-500/10 text-emerald-300 border-emerald-500/30' : 'bg-[#E8F5EE] text-[#0A2E20] border-[#10B981]/25'
         }`}>
-          Detect the Signals <span className="italic text-[#FF7E6B] font-extrabold">Hidden in Wildlife Trade.</span>
+          Multimodal Intelligence Engine
+        </span>
+        <h2 className={`font-serif text-[36px] sm:text-[46px] lg:text-[54px] font-bold leading-tight tracking-tight ${
+          darkMode ? 'text-white' : 'text-[#0A2E20]'
+        }`}>
+          Detect the Signals <span className="italic text-[#10B981] font-bold">Hidden in Wildlife Trade.</span>
         </h2>
-        <p className="mt-4 text-[18px] sm:text-[21px] text-[#3A5A64] leading-relaxed">
+        <p className={`mt-4 text-base sm:text-lg leading-relaxed ${
+          darkMode ? 'text-gray-300' : 'text-[#2D5A46]'
+        }`}>
           Submit suspicious social media posts or online marketplace listings via image upload or public URL. Our multimodal pipeline performs optical text extraction, protected species identification against CITES appendices, suspicious trade indicator detection, and confidence scoring to support forensic human verification.
         </p>
 
         {/* Engine Transparency Pill */}
-        <div className="mt-5 inline-flex items-center px-4 py-1.5 rounded-full bg-white/80 border border-[#1FB6C9]/20 text-[14px] text-[#3A5A64] shadow-sm">
+        <div className={`mt-5 inline-flex items-center px-4 py-1.5 rounded-full border text-xs shadow-sm ${
+          darkMode ? 'bg-white/5 border-white/10 text-gray-300' : 'bg-white border-[#10B981]/20 text-gray-700'
+        }`}>
           <span>
-            Active Architecture: <strong className="text-[#0B3A4A]">{apiKey ? 'Gemini 1.5 Multimodal Vision API' : 'Production Heuristic Engine (Demo Mode)'}</strong>
+            Active Architecture: <strong className={darkMode ? 'text-emerald-300' : 'text-[#0A2E20]'}>{apiKey ? 'Gemini 1.5 Multimodal Vision API' : 'CITES Taxonomy & Bayesian Heuristic Engine'}</strong>
           </span>
           <button
             onClick={() => setShowApiDrawer(!showApiDrawer)}
-            className="text-[#1FB6C9] underline hover:text-[#0B3A4A] ml-2 font-medium"
+            className="text-[#10B981] underline hover:text-[#059669] ml-2 font-semibold cursor-pointer"
           >
             {apiKey ? 'Edit API Key' : 'Configure Custom Key'}
           </button>

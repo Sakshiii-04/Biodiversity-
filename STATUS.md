@@ -47,11 +47,12 @@ Settled decisions. Do not reopen without asking the user.
 8. All backend commands run from inside backend/.
 9. Quality gates: ruff check, ruff format --check, pytest -q, plus the frontend-untouched check (see AGENTS.md).
 10. data/raw, data/processed, backend/models/checkpoints and "Training data/" are gitignored. data/lexicons is tracked.
+11. Final project name settled as SAMRAKSH (संरक्ष) with tagline "Vigilance for the Wild in the Digital Era." User explicitly approved frontend rebranding, redesign, new What We Do & About Us pages, and navigation overhaul per Rule 7.
 
 ## Open questions
 
 1. Do the literal labels and the inputType values in src/types/index.ts match AGENTS.md rule 22? Text-only submissions need a representation. Resolved by Task 2.0.
-2. Final project name (team decision).
+2. Final project name (Resolved: SAMRAKSH / संरक्ष).
 3. Who owns which lane? Fill the Owner column when tasks are claimed.
 
 ## Requests for the frontend owner
@@ -64,3 +65,4 @@ Append one line per event, newest at the bottom. Format: date - person or agent 
 
 - 2026-11-17 - Claude - Created STATUS.md and AGENTS.md; synced docs/implementation-plan.md (uv, tests, frontend read-only).
 - 2026-11-17 - Antigravity - Initialized AGENTS.md and STATUS.md in root; verified Phase 1 deliverables (Tasks 1.1 & 1.2 marked DONE); verified backend/ does not exist yet (Task 2.1 ready as TODO).
+- 2026-11-18 - Antigravity - User selected name SAMRAKSH (संरक्ष) and tagline "Vigilance for the Wild in the Digital Era." User granted explicit override under Rule 7 to execute website rebranding, redesign, What We Do, About Us, and animated navigation.

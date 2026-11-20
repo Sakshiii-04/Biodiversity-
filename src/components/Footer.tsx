@@ -1,8 +1,9 @@
 import React from 'react';
-import { Globe2, ShieldAlert, Heart, ExternalLink, ArrowUp } from 'lucide-react';
+import { ShieldCheck, ExternalLink, ArrowUp, Sparkles, Scale } from 'lucide-react';
+import { AppPage } from './Navigation';
 
 interface FooterProps {
-  onNavigate: (sectionId: string) => void;
+  onNavigate: (page: AppPage) => void;
 }
 
 export const Footer: React.FC<FooterProps> = ({ onNavigate }) => {
@@ -11,106 +12,113 @@ export const Footer: React.FC<FooterProps> = ({ onNavigate }) => {
   };
 
   return (
-    <footer className="bg-[#0B3A4A] text-white pt-20 pb-12 border-t border-[#1FB6C9]/20">
+    <footer className="bg-[#0A2E20] text-white pt-20 pb-12 border-t border-[#10B981]/20">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-12 pb-16 border-b border-white/10">
+
           {/* Col 1: Brand & Charter (4 cols) */}
           <div className="lg:col-span-4 space-y-4">
-            <div className="flex items-center gap-2.5">
-              <div className="w-10 h-10 rounded-full bg-[#1FB6C9] flex items-center justify-center text-white shadow-lg">
-                <Globe2 className="w-5 h-5 text-white" />
+            <div className="flex items-center gap-3">
+              <div className="w-14 h-14 rounded-2xl bg-white p-1 flex items-center justify-center shadow-lg shrink-0">
+                <img src="/logo.png" alt="SAMRAKSH Logo" className="w-full h-full object-contain" />
               </div>
               <div>
-                <span className="font-serif text-2xl font-bold tracking-tight text-white leading-none block">
-                  WILD<span className="text-[#1FB6C9]">INTEL</span>
-                </span>
-                <span className="text-[9px] uppercase tracking-widest font-bold text-[#9BF0FB] block mt-0.5">
-                  India-First Multimodal Wildlife Intelligence
+                <div className="flex items-baseline gap-1.5">
+                  <span className="font-serif text-2xl font-bold tracking-tight text-white leading-none block">
+                    SAMRAKSH
+                  </span>
+                  <span className="font-serif text-lg font-medium text-[#34D399]">
+                    (संरक्ष)
+                  </span>
+                </div>
+                <span className="text-[10px] uppercase tracking-widest font-bold text-[#A7F3D0] block mt-0.5">
+                  Vigilance for the Wild in the Digital Era.
                 </span>
               </div>
             </div>
 
-            <p className="text-xs text-[#E4F4F5]/75 leading-relaxed pr-4">
-              India-first multimodal illegal wildlife trade detection and intelligence platform combining interactive 3D incident mapping, verified historical crime datasets, CITES-grounded taxonomy, and evidence-based AI decision support.
+            <p className="text-xs text-[#E2E8F0]/80 leading-relaxed pr-4">
+              India-first multimodal digital wildlife trade detection and biodiversity conservation platform. Combining interactive planetary intelligence, CITES-grounded taxonomy, regional codeword resolution, and evidence-based decision support for human investigators.
             </p>
 
             <div className="pt-2">
               <span className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white/10 text-white text-[11px] border border-white/10">
-                <ShieldAlert className="w-3.5 h-3.5 text-[#FF7E6B]" />
-                Enforcement Portal: WCCB India & CITES
+                <Scale className="w-3.5 h-3.5 text-[#34D399]" />
+                UN SDG 15 • Wildlife Protection Act (1972/2022)
               </span>
             </div>
           </div>
 
-          {/* Col 2: Platform Sections (3 cols) */}
+          {/* Col 2: Platform Navigation (3 cols) */}
           <div className="lg:col-span-3 space-y-3">
-            <span className="text-xs uppercase font-bold tracking-widest text-[#9BF0FB] block">
-              Platform Modules
+            <span className="text-xs uppercase font-bold tracking-widest text-[#34D399] block">
+              Navigation
             </span>
-            <ul className="space-y-2 text-xs text-[#E4F4F5]/80">
+            <ul className="space-y-2.5 text-xs text-[#E2E8F0]/85">
               <li>
                 <button
-                  onClick={() => onNavigate('earth-explore')}
-                  className="hover:text-[#1FB6C9] transition-colors"
+                  onClick={() => onNavigate('home')}
+                  className="hover:text-[#34D399] transition-colors cursor-pointer text-left"
                 >
-                  Interactive 3D Earth Hub
+                  Home (Overview & Earth Hub)
                 </button>
               </li>
               <li>
                 <button
-                  onClick={() => onNavigate('hotspots')}
-                  className="hover:text-[#1FB6C9] transition-colors"
+                  onClick={() => onNavigate('what-we-do')}
+                  className="hover:text-[#34D399] transition-colors cursor-pointer text-left"
                 >
-                  Global Biodiversity Hotspots
+                  What We Do (Capabilities & Story)
                 </button>
               </li>
               <li>
                 <button
-                  onClick={() => onNavigate('incidents')}
-                  className="hover:text-[#1FB6C9] transition-colors"
+                  onClick={() => onNavigate('about-us')}
+                  className="hover:text-[#34D399] transition-colors cursor-pointer text-left"
                 >
-                  Historical Crime Seizures
+                  About Us (Mission, Vision & Roots)
+                </button>
+              </li>
+              <li>
+                <button
+                  onClick={() => onNavigate('biodiversity')}
+                  className="hover:text-[#34D399] transition-colors cursor-pointer text-left"
+                >
+                  Explore Biodiversity (3D Hotspots)
                 </button>
               </li>
               <li>
                 <button
                   onClick={() => onNavigate('detect')}
-                  className="hover:text-[#1FB6C9] transition-colors"
+                  className="hover:text-[#34D399] transition-colors cursor-pointer text-left flex items-center gap-1.5"
                 >
-                  AI Wildlife Trade Detection
+                  <Sparkles className="w-3 h-3 text-[#34D399]" />
+                  <span>Detection Platform (AI Tool)</span>
                 </button>
               </li>
               <li>
                 <button
                   onClick={() => onNavigate('dashboard')}
-                  className="hover:text-[#1FB6C9] transition-colors"
+                  className="hover:text-[#34D399] transition-colors cursor-pointer text-left"
                 >
-                  Enforcement Analytics & KPIs
-                </button>
-              </li>
-              <li>
-                <button
-                  onClick={() => onNavigate('architecture')}
-                  className="hover:text-[#1FB6C9] transition-colors"
-                >
-                  Technical Architecture & Research
+                  Dashboard (Telemetry & Audits)
                 </button>
               </li>
             </ul>
           </div>
 
-          {/* Col 3: Legal & Standards (3 cols) */}
+          {/* Col 3: Legal & Statutory Frameworks (3 cols) */}
           <div className="lg:col-span-3 space-y-3">
-            <span className="text-xs uppercase font-bold tracking-widest text-[#9BF0FB] block">
-              Regulatory Frameworks
+            <span className="text-xs uppercase font-bold tracking-widest text-[#34D399] block">
+              Conservation & Governance
             </span>
-            <ul className="space-y-2 text-xs text-[#E4F4F5]/80">
+            <ul className="space-y-2.5 text-xs text-[#E2E8F0]/85">
               <li>
                 <a
                   href="http://wccb.gov.in"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="hover:text-[#1FB6C9] transition-colors inline-flex items-center gap-1"
+                  className="hover:text-[#34D399] transition-colors inline-flex items-center gap-1"
                 >
                   WCCB (Govt. of India) <ExternalLink className="w-3 h-3 text-white/50" />
                 </a>
@@ -120,9 +128,9 @@ export const Footer: React.FC<FooterProps> = ({ onNavigate }) => {
                   href="https://cites.org/eng/app/appendices.php"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="hover:text-[#1FB6C9] transition-colors inline-flex items-center gap-1"
+                  className="hover:text-[#34D399] transition-colors inline-flex items-center gap-1"
                 >
-                  CITES Appendices I, II, III <ExternalLink className="w-3 h-3 text-white/50" />
+                  CITES Appendices I, II & III <ExternalLink className="w-3 h-3 text-white/50" />
                 </a>
               </li>
               <li>
@@ -130,19 +138,9 @@ export const Footer: React.FC<FooterProps> = ({ onNavigate }) => {
                   href="https://www.traffic.org"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="hover:text-[#1FB6C9] transition-colors inline-flex items-center gap-1"
+                  className="hover:text-[#34D399] transition-colors inline-flex items-center gap-1"
                 >
-                  TRAFFIC Wildlife Trade Network <ExternalLink className="w-3 h-3 text-white/50" />
-                </a>
-              </li>
-              <li>
-                <a
-                  href="https://www.interpol.int/Crimes/Environmental-crime"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="hover:text-[#1FB6C9] transition-colors inline-flex items-center gap-1"
-                >
-                  Interpol Environmental Security <ExternalLink className="w-3 h-3 text-white/50" />
+                  TRAFFIC Wildlife Monitoring <ExternalLink className="w-3 h-3 text-white/50" />
                 </a>
               </li>
               <li>
@@ -150,44 +148,61 @@ export const Footer: React.FC<FooterProps> = ({ onNavigate }) => {
                   href="https://www.iucnredlist.org"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="hover:text-[#1FB6C9] transition-colors inline-flex items-center gap-1"
+                  className="hover:text-[#34D399] transition-colors inline-flex items-center gap-1"
                 >
                   IUCN Red List of Threatened Species <ExternalLink className="w-3 h-3 text-white/50" />
                 </a>
               </li>
+              <li>
+                <button
+                  onClick={() => onNavigate('architecture')}
+                  className="hover:text-[#34D399] transition-colors cursor-pointer text-left"
+                >
+                  Technical Architecture Slide (Round 1)
+                </button>
+              </li>
             </ul>
           </div>
 
-          {/* Col 4: Top Action (2 cols) */}
-          <div className="lg:col-span-2 flex flex-col justify-between items-start md:items-end">
-            <button
-              onClick={scrollToTop}
-              className="w-12 h-12 rounded-full bg-[#1FB6C9] hover:bg-[#1693A3] text-white flex items-center justify-center shadow-lg transition-transform hover:scale-105"
-              aria-label="Scroll to top"
-            >
-              <ArrowUp className="w-5 h-5" />
-            </button>
-            <div className="text-[11px] text-[#9BF0FB]/70 mt-6 md:mt-0 text-left md:text-right">
-              Built for Global Wildlife Intelligence Hackathon 2026
+          {/* Col 4: Institutional Attribution (2 cols) */}
+          <div className="lg:col-span-2 space-y-3">
+            <span className="text-xs uppercase font-bold tracking-widest text-[#34D399] block">
+              Initiative
+            </span>
+            <p className="text-[11px] text-gray-300 leading-relaxed">
+              Developed for <strong>SUSTAINOVA 2026</strong> Ideathon (SDG 15).
+            </p>
+            <p className="text-[11px] text-gray-400 leading-relaxed">
+              Acropolis Institute of Technology and Research (AITR), Indore.
+            </p>
+            <div className="pt-2">
+              <button
+                onClick={scrollToTop}
+                className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-white/10 hover:bg-white/20 text-xs font-bold transition-all cursor-pointer text-white"
+              >
+                <ArrowUp className="w-3.5 h-3.5 text-[#34D399]" />
+                <span>Back to Top</span>
+              </button>
             </div>
           </div>
+
         </div>
 
-        {/* Bottom Bar */}
-        <div className="pt-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-[#E4F4F5]/60">
+        {/* Bottom Credits */}
+        <div className="pt-8 flex flex-col sm:flex-row items-center justify-between text-[11px] text-gray-400 gap-4">
           <div>
-            © {new Date().getFullYear()} WILDINTEL Platform. All rights reserved. Grounded in CITES Appendices and TRAFFIC intelligence.
+            © 2026 SAMRAKSH (संरक्ष). Built in support of UN Sustainable Development Goal 15 (Life on Land).
           </div>
-          <div className="flex items-center gap-4 text-[11px]">
-            <span>Ethical AI Disclosure</span>
+          <div className="flex items-center gap-4 text-gray-400">
+            <span>Mandatory Human Review</span>
             <span>•</span>
-            <span>Data Protection</span>
+            <span>Zero PII Storage</span>
             <span>•</span>
-            <span>Wildlife Conservation Charter</span>
+            <span>Open Access Conservation</span>
           </div>
         </div>
       </div>
     </footer>
   );
 };
-
+export default Footer;

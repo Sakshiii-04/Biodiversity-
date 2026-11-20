@@ -2,6 +2,9 @@ import { useState } from 'react';
 import { Navigation, AppPage } from './components/Navigation';
 import { Hero } from './components/Hero';
 import { Mission } from './components/Mission';
+import { WhatWeDoPage } from './components/WhatWeDo/WhatWeDoPage';
+import { AboutUsPage } from './components/AboutUs/AboutUsPage';
+import { BiodiversityPage } from './components/Biodiversity/BiodiversityPage';
 import { DetectionSection } from './components/Detection/DetectionSection';
 import { AnalyticsDashboard } from './components/Dashboard/AnalyticsDashboard';
 import { ArchitectureSection } from './components/Architecture/ArchitectureSection';
@@ -31,9 +34,20 @@ export function App() {
     setAnalysisRecords(prev => [record, ...prev]);
   };
 
-  const handleNavigatePage = (page: AppPage) => {
+  const handleNavigatePage = (page: AppPage, targetSection?: string) => {
     setCurrentPage(page);
-    window.scrollTo({ top: 0, behavior: 'smooth' });
+    if (targetSection) {
+      setTimeout(() => {
+        const el = document.getElementById(targetSection);
+        if (el) {
+          el.scrollIntoView({ behavior: 'smooth' });
+        } else {
+          window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+      }, 100);
+    } else {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
   };
 
   const handleToggleDarkMode = () => {
@@ -41,10 +55,10 @@ export function App() {
   };
 
   return (
-    <div className={`min-h-screen font-sans relative selection:bg-[#1FB6C9]/25 selection:text-[#0B3A4A] transition-colors duration-300 ${
-      darkMode ? 'dark bg-[#061822] text-[#E4F4F5]' : 'bg-[#F7F2E7] text-[#3A5A64]'
+    <div className={`min-h-screen font-sans relative selection:bg-[#10B981]/25 selection:text-[#0A2E20] transition-colors duration-300 ${
+      darkMode ? 'dark bg-[#061822] text-[#E4F4F5]' : 'bg-[#FAF8F5] text-[#1E3A2F]'
     }`}>
-      {/* Top Sticky Header */}
+      {/* Top Sticky Header — Animated Navigation inspired by TRAFFIC */}
       <Navigation
         currentPage={currentPage}
         onPageChange={handleNavigatePage}
@@ -57,14 +71,15 @@ export function App() {
 
       {/* Main Pages Switch */}
       <main className="pt-2">
-        {/* PAGE 1: LANDING PAGE (Single 3D Earth Hero + Mission) */}
+        {/* PAGE 1: HOME (Landing Experience: 3D Earth Hero + Mission + Case Studies + Impact) */}
         {currentPage === 'home' && (
           <div className="animate-in fade-in duration-300">
-            {/* The ONLY 3D Earth: Prominent Hero with Side Pop Card on Hover */}
+            {/* 3D Earth Hero with Wallpaper & Quick Access */}
             <Hero
               hotspots={hotspots}
               incidents={incidents}
               onNavigateToDetect={() => handleNavigatePage('detect')}
+              onNavigateToWhatWeDo={() => handleNavigatePage('what-we-do')}
               onNavigateToMission={() => {
                 const el = document.getElementById('mission');
                 if (el) el.scrollIntoView({ behavior: 'smooth' });
@@ -76,10 +91,12 @@ export function App() {
             {/* Our Mission: Editorial Story & 3 Pillars */}
             <Mission
               onDetectClick={() => handleNavigatePage('detect')}
-              onExploreEarthClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
+              onWhatWeDoClick={() => handleNavigatePage('what-we-do')}
+              onExploreEarthClick={() => handleNavigatePage('biodiversity')}
+              darkMode={darkMode}
             />
 
-            {/* Elo One Visual Case Studies / Enforcement Results Section */}
+            {/* Case Studies / Enforcement Results Section */}
             <CaseStudyResults
               onNavigateToDetect={() => handleNavigatePage('detect')}
               onNavigateToDashboard={() => handleNavigatePage('dashboard')}
@@ -90,9 +107,45 @@ export function App() {
           </div>
         )}
 
-        {/* PAGE 2: WILDLIFE TRADE DETECTION (Flagship AI Detection Feature) */}
+        {/* PAGE 2: WHAT WE DO (Dedicated comprehensive work explainer with secondary sticky subnav) */}
+        {currentPage === 'what-we-do' && (
+          <div className="animate-in fade-in duration-300 pt-16 sm:pt-20">
+            <WhatWeDoPage
+              onNavigateToDetect={() => handleNavigatePage('detect')}
+              onNavigateToBiodiversity={() => handleNavigatePage('biodiversity')}
+              onNavigateToDashboard={() => handleNavigatePage('dashboard')}
+              darkMode={darkMode}
+            />
+          </div>
+        )}
+
+        {/* PAGE 3: ABOUT US (Dedicated conservation technologist initiative story with secondary sticky subnav) */}
+        {currentPage === 'about-us' && (
+          <div className="animate-in fade-in duration-300 pt-16 sm:pt-20">
+            <AboutUsPage
+              onNavigateToWhatWeDo={() => handleNavigatePage('what-we-do')}
+              onNavigateToDetect={() => handleNavigatePage('detect')}
+              onNavigateToBiodiversity={() => handleNavigatePage('biodiversity')}
+              darkMode={darkMode}
+            />
+          </div>
+        )}
+
+        {/* PAGE 4: EXPLORE BIODIVERSITY (Dedicated 3D planetary hotspots & species hub) */}
+        {currentPage === 'biodiversity' && (
+          <div className="animate-in fade-in duration-300 pt-12 sm:pt-16">
+            <BiodiversityPage
+              hotspots={hotspots}
+              incidents={incidents}
+              onNavigateToDetect={() => handleNavigatePage('detect')}
+              darkMode={darkMode}
+            />
+          </div>
+        )}
+
+        {/* PAGE 5: DETECTION PLATFORM (Flagship AI Detection Feature) */}
         {currentPage === 'detect' && (
-          <div className="animate-in fade-in duration-300 pt-8">
+          <div className="animate-in fade-in duration-300 pt-12 sm:pt-16">
             <DetectionSection
               onLogAnalysisToDashboard={handleLogAnalysisToDashboard}
               onNavigateToDashboard={() => handleNavigatePage('dashboard')}
@@ -101,9 +154,9 @@ export function App() {
           </div>
         )}
 
-        {/* PAGE 3: ANALYTICS & INTELLIGENCE DASHBOARD */}
+        {/* PAGE 6: DASHBOARD (Analytics & Intelligence Audit Queue) */}
         {currentPage === 'dashboard' && (
-          <div className="animate-in fade-in duration-300 pt-8">
+          <div className="animate-in fade-in duration-300 pt-12 sm:pt-16">
             <AnalyticsDashboard
               records={analysisRecords}
               onNavigateToDetect={() => handleNavigatePage('detect')}
@@ -112,21 +165,16 @@ export function App() {
           </div>
         )}
 
-        {/* PAGE 4: TECHNICAL ARCHITECTURE & RESEARCH (Exact Replica of User Reference) */}
+        {/* PAGE 7: TECHNICAL ARCHITECTURE & RESEARCH */}
         {currentPage === 'architecture' && (
-          <div className="animate-in fade-in duration-300 pt-8">
+          <div className="animate-in fade-in duration-300 pt-12 sm:pt-16">
             <ArchitectureSection darkMode={darkMode} />
           </div>
         )}
       </main>
 
-      {/* Global Luxury Coralis Footer */}
-      <Footer onNavigate={(id) => {
-        if (id === 'detect') handleNavigatePage('detect');
-        else if (id === 'dashboard') handleNavigatePage('dashboard');
-        else if (id === 'architecture') handleNavigatePage('architecture');
-        else handleNavigatePage('home');
-      }} />
+      {/* Global Conservation Footer */}
+      <Footer onNavigate={(page) => handleNavigatePage(page)} />
     </div>
   );
 }
