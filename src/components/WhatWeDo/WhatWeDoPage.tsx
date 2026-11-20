@@ -1,16 +1,16 @@
 import React, { useState } from 'react';
-import { 
-  ShieldCheck, 
-  Sparkles, 
-  FileText, 
-  Layers, 
-  Scale, 
+import {
+  ShieldCheck,
+  Sparkles,
+  FileText,
+  Layers,
+  Scale,
   ExternalLink,
-  ChevronRight, 
-  Database, 
-  BarChart3, 
-  Compass, 
-  Lock, 
+  ChevronRight,
+  Database,
+  BarChart3,
+  Compass,
+  Lock,
   Globe2,
   ArrowRight,
   Search,
@@ -37,24 +37,22 @@ export const WhatWeDoPage: React.FC<WhatWeDoPageProps> = ({
   const [activeWorkflowTab, setActiveWorkflowTab] = useState<'intake' | 'multimodal' | 'cites' | 'human_review'>('multimodal');
 
   return (
-    <div className={`min-h-screen py-16 px-4 sm:px-6 lg:px-8 transition-colors duration-300 ${
-      darkMode ? 'bg-[#061822] text-[#E2E8F0]' : 'bg-[#FAF8F5] text-[#1E3A2F]'
-    }`}>
+    <div className={`min-h-screen py-16 px-4 sm:px-6 lg:px-8 transition-colors duration-300 ${darkMode ? 'bg-[#061822] text-[#E2E8F0]' : 'bg-[#FAF8F5] text-[#1E3A2F]'
+      }`}>
       <div className="max-w-7xl mx-auto space-y-20">
-        
+
         {/* ================= PAGE HERO: CLEAN & IMPACTFUL ================= */}
         <section className="pt-6 sm:pt-10 border-b pb-12 border-emerald-500/15">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
-            
+
             <div className="lg:col-span-7 space-y-4">
               <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-emerald-500/10 border border-emerald-500/25 text-emerald-700 dark:text-emerald-300 text-xs font-bold uppercase tracking-widest">
                 <ShieldCheck className="w-4 h-4 text-[#10B981]" />
                 <span>Capabilities & Operational Methodology</span>
               </div>
 
-              <h1 className={`font-serif text-3xl sm:text-4xl lg:text-5xl font-bold leading-[1.15] ${
-                darkMode ? 'text-white' : 'text-[#0A2E20]'
-              }`}>
+              <h1 className={`font-serif text-3xl sm:text-4xl lg:text-5xl font-bold leading-[1.15] ${darkMode ? 'text-white' : 'text-[#0A2E20]'
+                }`}>
                 Making digital wildlife trade <span className="italic text-[#10B981]">visible, verifiable & actionable.</span>
               </h1>
 
@@ -89,11 +87,10 @@ export const WhatWeDoPage: React.FC<WhatWeDoPageProps> = ({
 
                 <button
                   onClick={onNavigateToDashboard}
-                  className={`px-6 py-3 rounded-full border text-xs font-bold uppercase tracking-wider transition-all cursor-pointer flex items-center gap-2 ${
-                    darkMode
-                      ? 'border-[#10B981]/30 text-white hover:bg-white/10'
-                      : 'border-[#2D5A46]/30 text-[#0A2E20] hover:bg-[#E8F5EE]'
-                  }`}
+                  className={`px-6 py-3 rounded-full border text-xs font-bold uppercase tracking-wider transition-all cursor-pointer flex items-center gap-2 ${darkMode
+                    ? 'border-[#10B981]/30 text-white hover:bg-white/10'
+                    : 'border-[#2D5A46]/30 text-[#0A2E20] hover:bg-[#E8F5EE]'
+                    }`}
                 >
                   <BarChart3 className="w-4 h-4 text-[#10B981]" />
                   <span>View Telemetry Dashboard</span>
@@ -149,9 +146,8 @@ export const WhatWeDoPage: React.FC<WhatWeDoPageProps> = ({
             <span className="text-xs font-bold uppercase tracking-widest text-[#10B981]">
               Pillar A — Technical Flowchart
             </span>
-            <h2 className={`font-serif text-2xl sm:text-3xl font-bold ${
-              darkMode ? 'text-white' : 'text-[#0A2E20]'
-            }`}>
+            <h2 className={`font-serif text-2xl sm:text-3xl font-bold ${darkMode ? 'text-white' : 'text-[#0A2E20]'
+              }`}>
               How SAMRAKSH Detects Covert Wildlife Trade
             </h2>
             <p className={`text-sm ${darkMode ? 'text-gray-300' : 'text-[#2D5A46]'}`}>
@@ -161,11 +157,10 @@ export const WhatWeDoPage: React.FC<WhatWeDoPageProps> = ({
 
           {/* Connected Flowchart Grid */}
           <div className="grid grid-cols-1 md:grid-cols-5 gap-4 relative">
-            
+
             {/* Step 1 */}
-            <div className={`p-5 rounded-2xl border relative flex flex-col justify-between ${
-              darkMode ? 'bg-[#0E2E23]/70 border-[#10B981]/30' : 'bg-white border-[#2D5A46]/20 shadow-sm'
-            }`}>
+            <div className={`p-5 rounded-2xl border relative flex flex-col justify-between ${darkMode ? 'bg-[#0E2E23]/70 border-[#10B981]/30' : 'bg-white border-[#2D5A46]/20 shadow-sm'
+              }`}>
               <div className="space-y-3">
                 <div className="flex items-center justify-between">
                   <span className="w-6 h-6 rounded-full bg-[#10B981] text-white text-xs font-bold flex items-center justify-center">1</span>
@@ -182,9 +177,8 @@ export const WhatWeDoPage: React.FC<WhatWeDoPageProps> = ({
             </div>
 
             {/* Step 2 */}
-            <div className={`p-5 rounded-2xl border relative flex flex-col justify-between ${
-              darkMode ? 'bg-[#0E2E23]/70 border-[#10B981]/30' : 'bg-white border-[#2D5A46]/20 shadow-sm'
-            }`}>
+            <div className={`p-5 rounded-2xl border relative flex flex-col justify-between ${darkMode ? 'bg-[#0E2E23]/70 border-[#10B981]/30' : 'bg-white border-[#2D5A46]/20 shadow-sm'
+              }`}>
               <div className="space-y-3">
                 <div className="flex items-center justify-between">
                   <span className="w-6 h-6 rounded-full bg-[#10B981] text-white text-xs font-bold flex items-center justify-center">2</span>
@@ -201,9 +195,8 @@ export const WhatWeDoPage: React.FC<WhatWeDoPageProps> = ({
             </div>
 
             {/* Step 3 */}
-            <div className={`p-5 rounded-2xl border relative flex flex-col justify-between ${
-              darkMode ? 'bg-[#0E2E23]/70 border-[#10B981]/30' : 'bg-white border-[#2D5A46]/20 shadow-sm'
-            }`}>
+            <div className={`p-5 rounded-2xl border relative flex flex-col justify-between ${darkMode ? 'bg-[#0E2E23]/70 border-[#10B981]/30' : 'bg-white border-[#2D5A46]/20 shadow-sm'
+              }`}>
               <div className="space-y-3">
                 <div className="flex items-center justify-between">
                   <span className="w-6 h-6 rounded-full bg-[#10B981] text-white text-xs font-bold flex items-center justify-center">3</span>
@@ -220,9 +213,8 @@ export const WhatWeDoPage: React.FC<WhatWeDoPageProps> = ({
             </div>
 
             {/* Step 4 */}
-            <div className={`p-5 rounded-2xl border relative flex flex-col justify-between ${
-              darkMode ? 'bg-[#0E2E23]/70 border-[#10B981]/30' : 'bg-white border-[#2D5A46]/20 shadow-sm'
-            }`}>
+            <div className={`p-5 rounded-2xl border relative flex flex-col justify-between ${darkMode ? 'bg-[#0E2E23]/70 border-[#10B981]/30' : 'bg-white border-[#2D5A46]/20 shadow-sm'
+              }`}>
               <div className="space-y-3">
                 <div className="flex items-center justify-between">
                   <span className="w-6 h-6 rounded-full bg-[#10B981] text-white text-xs font-bold flex items-center justify-center">4</span>
@@ -239,9 +231,8 @@ export const WhatWeDoPage: React.FC<WhatWeDoPageProps> = ({
             </div>
 
             {/* Step 5 */}
-            <div className={`p-5 rounded-2xl border relative flex flex-col justify-between ${
-              darkMode ? 'bg-[#0E2E23]/70 border-[#10B981]/30' : 'bg-white border-[#2D5A46]/20 shadow-sm'
-            }`}>
+            <div className={`p-5 rounded-2xl border relative flex flex-col justify-between ${darkMode ? 'bg-[#0E2E23]/70 border-[#10B981]/30' : 'bg-white border-[#2D5A46]/20 shadow-sm'
+              }`}>
               <div className="space-y-3">
                 <div className="flex items-center justify-between">
                   <span className="w-6 h-6 rounded-full bg-[#10B981] text-white text-xs font-bold flex items-center justify-center">5</span>
@@ -267,9 +258,8 @@ export const WhatWeDoPage: React.FC<WhatWeDoPageProps> = ({
             <span className="text-xs font-bold uppercase tracking-widest text-[#10B981]">
               Pillar B — Forensic Codeword Resolution
             </span>
-            <h2 className={`font-serif text-2xl sm:text-3xl font-bold ${
-              darkMode ? 'text-white' : 'text-[#0A2E20]'
-            }`}>
+            <h2 className={`font-serif text-2xl sm:text-3xl font-bold ${darkMode ? 'text-white' : 'text-[#0A2E20]'
+              }`}>
               Decoding Regional Trafficking Slang
             </h2>
             <p className={`text-sm ${darkMode ? 'text-gray-300' : 'text-[#2D5A46]'}`}>
@@ -280,9 +270,8 @@ export const WhatWeDoPage: React.FC<WhatWeDoPageProps> = ({
           {/* Visual Matrix Table */}
           <div className="overflow-x-auto rounded-2xl border border-emerald-500/20 shadow-md">
             <table className="w-full text-left text-xs">
-              <thead className={`uppercase tracking-wider font-bold text-[11px] ${
-                darkMode ? 'bg-[#0E2E23] text-[#34D399]' : 'bg-[#E8F5EE] text-[#0A2E20]'
-              }`}>
+              <thead className={`uppercase tracking-wider font-bold text-[11px] ${darkMode ? 'bg-[#0E2E23] text-[#34D399]' : 'bg-[#E8F5EE] text-[#0A2E20]'
+                }`}>
                 <tr>
                   <th className="py-3.5 px-4">Disguised Listing Codeword</th>
                   <th className="py-3.5 px-4">Alleged Market Context</th>
@@ -325,9 +314,8 @@ export const WhatWeDoPage: React.FC<WhatWeDoPageProps> = ({
           </div>
 
           {/* Three Allowed Labels Badge Strip */}
-          <div className={`p-4 rounded-2xl border flex flex-wrap items-center justify-between gap-4 text-xs ${
-            darkMode ? 'bg-[#0E2E23]/50 border-emerald-500/20' : 'bg-[#E8F5EE] border-emerald-500/30'
-          }`}>
+          <div className={`p-4 rounded-2xl border flex flex-wrap items-center justify-between gap-4 text-xs ${darkMode ? 'bg-[#0E2E23]/50 border-emerald-500/20' : 'bg-[#E8F5EE] border-emerald-500/30'
+            }`}>
             <span className="font-bold text-[#0A2E20] dark:text-white">Strict Classification Classes:</span>
             <div className="flex flex-wrap gap-2">
               <span className="px-3 py-1 rounded-full bg-red-600 text-white font-bold text-[11px]">
@@ -353,9 +341,8 @@ export const WhatWeDoPage: React.FC<WhatWeDoPageProps> = ({
             <span className="text-xs font-bold uppercase tracking-widest text-[#10B981]">
               Pillar C — Targeted Wildlife Fauna
             </span>
-            <h2 className={`font-serif text-2xl sm:text-3xl font-bold ${
-              darkMode ? 'text-white' : 'text-[#0A2E20]'
-            }`}>
+            <h2 className={`font-serif text-2xl sm:text-3xl font-bold ${darkMode ? 'text-white' : 'text-[#0A2E20]'
+              }`}>
               Priority Species Monitored
             </h2>
             <p className={`text-sm ${darkMode ? 'text-gray-300' : 'text-[#2D5A46]'}`}>
@@ -365,9 +352,8 @@ export const WhatWeDoPage: React.FC<WhatWeDoPageProps> = ({
 
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
             {/* Pangolin */}
-            <div className={`rounded-2xl overflow-hidden border shadow-sm group ${
-              darkMode ? 'bg-[#0E2E23]/60 border-white/10' : 'bg-white border-gray-200'
-            }`}>
+            <div className={`rounded-2xl overflow-hidden border shadow-sm group ${darkMode ? 'bg-[#0E2E23]/60 border-white/10' : 'bg-white border-gray-200'
+              }`}>
               <div className="h-40 overflow-hidden relative">
                 <img
                   src="https://images.unsplash.com/photo-1590682680695-43b964a3ae17?auto=format&fit=crop&w=600&q=80"
@@ -385,9 +371,8 @@ export const WhatWeDoPage: React.FC<WhatWeDoPageProps> = ({
             </div>
 
             {/* Tiger */}
-            <div className={`rounded-2xl overflow-hidden border shadow-sm group ${
-              darkMode ? 'bg-[#0E2E23]/60 border-white/10' : 'bg-white border-gray-200'
-            }`}>
+            <div className={`rounded-2xl overflow-hidden border shadow-sm group ${darkMode ? 'bg-[#0E2E23]/60 border-white/10' : 'bg-white border-gray-200'
+              }`}>
               <div className="h-40 overflow-hidden relative">
                 <img
                   src="https://images.unsplash.com/photo-1548767797-d8c844163c4c?auto=format&fit=crop&w=600&q=80"
@@ -405,9 +390,8 @@ export const WhatWeDoPage: React.FC<WhatWeDoPageProps> = ({
             </div>
 
             {/* Tortoise */}
-            <div className={`rounded-2xl overflow-hidden border shadow-sm group ${
-              darkMode ? 'bg-[#0E2E23]/60 border-white/10' : 'bg-white border-gray-200'
-            }`}>
+            <div className={`rounded-2xl overflow-hidden border shadow-sm group ${darkMode ? 'bg-[#0E2E23]/60 border-white/10' : 'bg-white border-gray-200'
+              }`}>
               <div className="h-40 overflow-hidden relative">
                 <img
                   src="https://images.unsplash.com/photo-1518467166778-b88f373ffec7?auto=format&fit=crop&w=600&q=80"
@@ -425,9 +409,8 @@ export const WhatWeDoPage: React.FC<WhatWeDoPageProps> = ({
             </div>
 
             {/* Elephant */}
-            <div className={`rounded-2xl overflow-hidden border shadow-sm group ${
-              darkMode ? 'bg-[#0E2E23]/60 border-white/10' : 'bg-white border-gray-200'
-            }`}>
+            <div className={`rounded-2xl overflow-hidden border shadow-sm group ${darkMode ? 'bg-[#0E2E23]/60 border-white/10' : 'bg-white border-gray-200'
+              }`}>
               <div className="h-40 overflow-hidden relative">
                 <img
                   src="https://images.unsplash.com/photo-1557050543-4d5f4e07ef46?auto=format&fit=crop&w=600&q=80"
@@ -450,11 +433,10 @@ export const WhatWeDoPage: React.FC<WhatWeDoPageProps> = ({
         {/* ================= PILLAR D & E: TELEMETRY & SAFEGUARDS ================= */}
         <section id="monitoring-insights" className="scroll-mt-24 space-y-8">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-stretch">
-            
+
             {/* Left: Telemetry & Dossier (7 cols) */}
-            <div className={`lg:col-span-7 p-6 sm:p-8 rounded-3xl border ${
-              darkMode ? 'bg-[#0E2E23]/60 border-[#10B981]/25' : 'bg-white border-gray-200 shadow-sm'
-            }`}>
+            <div className={`lg:col-span-7 p-6 sm:p-8 rounded-3xl border ${darkMode ? 'bg-[#0E2E23]/60 border-[#10B981]/25' : 'bg-white border-gray-200 shadow-sm'
+              }`}>
               <span className="text-xs font-bold uppercase tracking-widest text-[#10B981] block mb-2">
                 Pillar D — Telemetry & Evidence Export
               </span>
@@ -498,7 +480,7 @@ export const WhatWeDoPage: React.FC<WhatWeDoPageProps> = ({
                 <h3 className="font-serif text-2xl font-bold mb-4">
                   Ethical Safeguards
                 </h3>
-                
+
                 <div className="space-y-3 text-xs">
                   <div className="flex items-start gap-2.5">
                     <CheckCircle2 className="w-4 h-4 text-[#34D399] shrink-0 mt-0.5" />

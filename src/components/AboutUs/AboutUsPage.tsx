@@ -1,10 +1,10 @@
 import React from 'react';
-import { 
-  ShieldCheck, 
-  Target, 
-  Eye, 
-  Globe2, 
-  Award, 
+import {
+  ShieldCheck,
+  Target,
+  Eye,
+  Globe2,
+  Award,
   ArrowRight,
   CheckCircle2,
   Sparkles,
@@ -30,24 +30,22 @@ export const AboutUsPage: React.FC<AboutUsPageProps> = ({
   darkMode = false
 }) => {
   return (
-    <div className={`min-h-screen py-16 px-4 sm:px-6 lg:px-8 transition-colors duration-300 ${
-      darkMode ? 'bg-[#061822] text-[#E2E8F0]' : 'bg-[#FAF8F5] text-[#1E3A2F]'
-    }`}>
+    <div className={`min-h-screen py-16 px-4 sm:px-6 lg:px-8 transition-colors duration-300 ${darkMode ? 'bg-[#061822] text-[#E2E8F0]' : 'bg-[#FAF8F5] text-[#1E3A2F]'
+      }`}>
       <div className="max-w-7xl mx-auto space-y-20">
 
         {/* ================= HERO: CLEAN & EDITORIAL ================= */}
         <section className="pt-6 sm:pt-10 border-b pb-12 border-emerald-500/15">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
-            
+
             <div className="lg:col-span-7 space-y-4">
               <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-emerald-500/10 border border-emerald-500/25 text-emerald-700 dark:text-emerald-300 text-xs font-bold uppercase tracking-widest">
                 <ShieldCheck className="w-4 h-4 text-[#10B981]" />
                 <span>Conservation Intelligence Initiative</span>
               </div>
 
-              <h1 className={`font-serif text-3xl sm:text-4xl lg:text-5xl font-bold leading-[1.15] ${
-                darkMode ? 'text-white' : 'text-[#0A2E20]'
-              }`}>
+              <h1 className={`font-serif text-3xl sm:text-4xl lg:text-5xl font-bold leading-[1.15] ${darkMode ? 'text-white' : 'text-[#0A2E20]'
+                }`}>
                 Technology in Service of <span className="italic text-[#10B981]">Earth’s Living Heritage.</span>
               </h1>
 
@@ -66,11 +64,10 @@ export const AboutUsPage: React.FC<AboutUsPageProps> = ({
 
                 <button
                   onClick={onNavigateToBiodiversity}
-                  className={`px-6 py-3 rounded-full border text-xs font-bold uppercase tracking-wider transition-all cursor-pointer flex items-center gap-2 ${
-                    darkMode
-                      ? 'border-[#10B981]/30 text-white hover:bg-white/10'
-                      : 'border-[#2D5A46]/30 text-[#0A2E20] hover:bg-[#E8F5EE]'
-                  }`}
+                  className={`px-6 py-3 rounded-full border text-xs font-bold uppercase tracking-wider transition-all cursor-pointer flex items-center gap-2 ${darkMode
+                    ? 'border-[#10B981]/30 text-white hover:bg-white/10'
+                    : 'border-[#2D5A46]/30 text-[#0A2E20] hover:bg-[#E8F5EE]'
+                    }`}
                 >
                   <Globe2 className="w-4 h-4 text-[#10B981]" />
                   <span>3D Hotspot Map</span>
@@ -113,18 +110,16 @@ export const AboutUsPage: React.FC<AboutUsPageProps> = ({
             <span className="text-xs font-bold uppercase tracking-widest text-[#10B981]">
               Origin & Academic Foundations
             </span>
-            <h2 className={`font-serif text-2xl sm:text-3xl font-bold ${
-              darkMode ? 'text-white' : 'text-[#0A2E20]'
-            }`}>
+            <h2 className={`font-serif text-2xl sm:text-3xl font-bold ${darkMode ? 'text-white' : 'text-[#0A2E20]'
+              }`}>
               Who We Are
             </h2>
           </div>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
             {/* Tile 1 */}
-            <div className={`p-6 rounded-2xl border space-y-3 ${
-              darkMode ? 'bg-[#0E2E23]/60 border-white/10' : 'bg-white border-gray-200 shadow-sm'
-            }`}>
+            <div className={`p-6 rounded-2xl border space-y-3 ${darkMode ? 'bg-[#0E2E23]/60 border-white/10' : 'bg-white border-gray-200 shadow-sm'
+              }`}>
               <div className="w-10 h-10 rounded-xl bg-emerald-500/10 flex items-center justify-center text-[#10B981]">
                 <School className="w-5 h-5" />
               </div>
@@ -135,9 +130,8 @@ export const AboutUsPage: React.FC<AboutUsPageProps> = ({
             </div>
 
             {/* Tile 2 */}
-            <div className={`p-6 rounded-2xl border space-y-3 ${
-              darkMode ? 'bg-[#0E2E23]/60 border-white/10' : 'bg-white border-gray-200 shadow-sm'
-            }`}>
+            <div className={`p-6 rounded-2xl border space-y-3 ${darkMode ? 'bg-[#0E2E23]/60 border-white/10' : 'bg-white border-gray-200 shadow-sm'
+              }`}>
               <div className="w-10 h-10 rounded-xl bg-emerald-500/10 flex items-center justify-center text-[#10B981]">
                 <Award className="w-5 h-5" />
               </div>
@@ -148,9 +142,8 @@ export const AboutUsPage: React.FC<AboutUsPageProps> = ({
             </div>
 
             {/* Tile 3 */}
-            <div className={`p-6 rounded-2xl border space-y-3 ${
-              darkMode ? 'bg-[#0E2E23]/60 border-white/10' : 'bg-white border-gray-200 shadow-sm'
-            }`}>
+            <div className={`p-6 rounded-2xl border space-y-3 ${darkMode ? 'bg-[#0E2E23]/60 border-white/10' : 'bg-white border-gray-200 shadow-sm'
+              }`}>
               <div className="w-10 h-10 rounded-xl bg-emerald-500/10 flex items-center justify-center text-[#10B981]">
                 <Search className="w-5 h-5" />
               </div>
@@ -161,9 +154,8 @@ export const AboutUsPage: React.FC<AboutUsPageProps> = ({
             </div>
 
             {/* Tile 4 */}
-            <div className={`p-6 rounded-2xl border space-y-3 ${
-              darkMode ? 'bg-[#0E2E23]/60 border-white/10' : 'bg-white border-gray-200 shadow-sm'
-            }`}>
+            <div className={`p-6 rounded-2xl border space-y-3 ${darkMode ? 'bg-[#0E2E23]/60 border-white/10' : 'bg-white border-gray-200 shadow-sm'
+              }`}>
               <div className="w-10 h-10 rounded-xl bg-emerald-500/10 flex items-center justify-center text-[#10B981]">
                 <Scale className="w-5 h-5" />
               </div>
@@ -220,9 +212,8 @@ export const AboutUsPage: React.FC<AboutUsPageProps> = ({
         {/* ================= MISSION & VISION: DUAL VISUAL CARDS ================= */}
         <section id="mission-vision" className="scroll-mt-24 grid grid-cols-1 md:grid-cols-2 gap-6">
           {/* Mission */}
-          <div className={`p-6 sm:p-8 rounded-3xl border space-y-3 ${
-            darkMode ? 'bg-[#0E2E23]/60 border-white/10' : 'bg-white border-gray-200 shadow-sm'
-          }`}>
+          <div className={`p-6 sm:p-8 rounded-3xl border space-y-3 ${darkMode ? 'bg-[#0E2E23]/60 border-white/10' : 'bg-white border-gray-200 shadow-sm'
+            }`}>
             <div className="w-10 h-10 rounded-xl bg-emerald-500/10 flex items-center justify-center text-[#10B981]">
               <Target className="w-5 h-5" />
             </div>
@@ -241,9 +232,8 @@ export const AboutUsPage: React.FC<AboutUsPageProps> = ({
           </div>
 
           {/* Vision */}
-          <div className={`p-6 sm:p-8 rounded-3xl border space-y-3 ${
-            darkMode ? 'bg-[#0E2E23]/60 border-white/10' : 'bg-white border-gray-200 shadow-sm'
-          }`}>
+          <div className={`p-6 sm:p-8 rounded-3xl border space-y-3 ${darkMode ? 'bg-[#0E2E23]/60 border-white/10' : 'bg-white border-gray-200 shadow-sm'
+            }`}>
             <div className="w-10 h-10 rounded-xl bg-emerald-500/10 flex items-center justify-center text-[#10B981]">
               <Eye className="w-5 h-5" />
             </div>
@@ -269,9 +259,8 @@ export const AboutUsPage: React.FC<AboutUsPageProps> = ({
             <span className="text-xs font-bold uppercase tracking-widest text-[#10B981]">
               Integrated Methodology
             </span>
-            <h2 className={`font-serif text-2xl sm:text-3xl font-bold ${
-              darkMode ? 'text-white' : 'text-[#0A2E20]'
-            }`}>
+            <h2 className={`font-serif text-2xl sm:text-3xl font-bold ${darkMode ? 'text-white' : 'text-[#0A2E20]'
+              }`}>
               Our 5-Point Approach
             </h2>
           </div>
@@ -285,11 +274,10 @@ export const AboutUsPage: React.FC<AboutUsPageProps> = ({
               { num: '04', title: 'Hotspot Mapping', desc: 'Connecting digital listings to vulnerable geographic origins' },
               { num: '05', title: 'Lawful Action', desc: 'Courtroom-ready dossiers for WCCB & Forest Department officers' },
             ].map((step, idx) => (
-              <div 
+              <div
                 key={idx}
-                className={`p-4 rounded-2xl border ${
-                  darkMode ? 'bg-[#0E2E23]/40 border-white/10' : 'bg-white border-gray-200 shadow-sm'
-                }`}
+                className={`p-4 rounded-2xl border ${darkMode ? 'bg-[#0E2E23]/40 border-white/10' : 'bg-white border-gray-200 shadow-sm'
+                  }`}
               >
                 <div className="text-emerald-500 font-bold text-sm mb-1">{step.num}</div>
                 <h4 className="font-bold text-xs mb-1.5">{step.title}</h4>
@@ -320,9 +308,8 @@ export const AboutUsPage: React.FC<AboutUsPageProps> = ({
             </button>
             <button
               onClick={onNavigateToWhatWeDo}
-              className={`px-6 py-3 rounded-full border text-xs font-bold uppercase tracking-widest transition-all cursor-pointer ${
-                darkMode ? 'border-[#10B981]/30 text-white hover:bg-white/10' : 'border-[#2D5A46]/30 text-[#0A2E20] hover:bg-[#E8F5EE]'
-              }`}
+              className={`px-6 py-3 rounded-full border text-xs font-bold uppercase tracking-widest transition-all cursor-pointer ${darkMode ? 'border-[#10B981]/30 text-white hover:bg-white/10' : 'border-[#2D5A46]/30 text-[#0A2E20] hover:bg-[#E8F5EE]'
+                }`}
             >
               <span>Read What We Do</span>
             </button>
