@@ -1,6 +1,7 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { Navigation, AppPage } from './components/Navigation';
 import { Hero } from './components/Hero';
+import { LiveTicker } from './components/LiveTicker';
 import { Mission } from './components/Mission';
 import { WhatWeDoPage } from './components/WhatWeDo/WhatWeDoPage';
 import { AboutUsPage } from './components/AboutUs/AboutUsPage';
@@ -29,6 +30,32 @@ export function App() {
 
   const dict = TRANSLATIONS[language] || TRANSLATIONS.en;
 
+  // Real-time Language Switcher via Google Translate Engine
+  useEffect(() => {
+    const triggerTranslation = () => {
+      try {
+        const targetLang = language;
+        if (targetLang === 'en') {
+          document.cookie = 'googtrans=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;';
+          document.cookie = `googtrans=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/; domain=${window.location.hostname};`;
+        } else {
+          document.cookie = `googtrans=/en/${targetLang}; path=/;`;
+          document.cookie = `googtrans=/en/${targetLang}; path=/; domain=${window.location.hostname};`;
+        }
+
+        const combo = document.querySelector('.goog-te-combo') as HTMLSelectElement | null;
+        if (combo && combo.value !== targetLang) {
+          combo.value = targetLang;
+          combo.dispatchEvent(new Event('change'));
+        }
+      } catch (e) {
+        // ignore
+      }
+    };
+
+    triggerTranslation();
+  }, [language]);
+
   // Dynamic Dashboard Update: When user logs an analysis from Detection tool
   const handleLogAnalysisToDashboard = (record: AnalysisResult) => {
     setAnalysisRecords(prev => [record, ...prev]);
@@ -55,7 +82,7 @@ export function App() {
   };
 
   return (
-    <div className={`min-h-screen font-sans relative selection:bg-[#10B981]/25 selection:text-[#0A2E20] transition-colors duration-300 ${
+    <div className={`min-h-screen font-sans relative selection:bg-emerald-500 selection:text-white dark:selection:bg-emerald-500 dark:selection:text-white transition-colors duration-300 ${
       darkMode ? 'dark bg-[#061822] text-[#E4F4F5]' : 'bg-[#FAF8F5] text-[#1E3A2F]'
     }`}>
       {/* Top Sticky Header — Animated Navigation inspired by TRAFFIC */}
@@ -88,6 +115,12 @@ export function App() {
               darkMode={darkMode}
             />
 
+            {/* Live Interdiction Feed / Ticker */}
+            <LiveTicker
+              darkMode={darkMode}
+              onNavigateToDetect={() => handleNavigatePage('detect')}
+            />
+
             {/* Our Mission: Editorial Story & 3 Pillars */}
             <Mission
               onDetectClick={() => handleNavigatePage('detect')}
@@ -109,7 +142,7 @@ export function App() {
 
         {/* PAGE 2: WHAT WE DO (Dedicated comprehensive work explainer with secondary sticky subnav) */}
         {currentPage === 'what-we-do' && (
-          <div className="animate-in fade-in duration-300 pt-16 sm:pt-20">
+          <div className="animate-in fade-in duration-300 pt-28 sm:pt-32">
             <WhatWeDoPage
               onNavigateToDetect={() => handleNavigatePage('detect')}
               onNavigateToBiodiversity={() => handleNavigatePage('biodiversity')}
@@ -121,7 +154,7 @@ export function App() {
 
         {/* PAGE 3: ABOUT US (Dedicated conservation technologist initiative story with secondary sticky subnav) */}
         {currentPage === 'about-us' && (
-          <div className="animate-in fade-in duration-300 pt-16 sm:pt-20">
+          <div className="animate-in fade-in duration-300 pt-28 sm:pt-32">
             <AboutUsPage
               onNavigateToWhatWeDo={() => handleNavigatePage('what-we-do')}
               onNavigateToDetect={() => handleNavigatePage('detect')}

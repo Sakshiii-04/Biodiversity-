@@ -105,7 +105,7 @@ export const AboutUsPage: React.FC<AboutUsPageProps> = ({
 
 
         {/* ================= WHO WE ARE: 4 INFOGRAPHIC TILES ================= */}
-        <section id="who-we-are" className="scroll-mt-24 space-y-6">
+        <section id="who-we-are" className="scroll-mt-36 space-y-6">
           <div className="max-w-3xl space-y-2">
             <span className="text-xs font-bold uppercase tracking-widest text-[#10B981]">
               Origin & Academic Foundations
@@ -169,7 +169,7 @@ export const AboutUsPage: React.FC<AboutUsPageProps> = ({
 
 
         {/* ================= PHILOSOPHY: EMBLEM BREAKDOWN DIAGRAM ================= */}
-        <section id="why-samraksh" className="scroll-mt-24 p-6 sm:p-10 rounded-3xl bg-[#0A2E20] text-white shadow-2xl relative overflow-hidden">
+        <section id="why-samraksh" className="scroll-mt-36 p-6 sm:p-10 rounded-3xl bg-[#0A2E20] text-white shadow-2xl relative overflow-hidden">
           <div className="max-w-4xl space-y-6 relative z-10">
             <div>
               <span className="text-xs font-bold uppercase tracking-widest text-[#34D399] block mb-1">
@@ -210,7 +210,7 @@ export const AboutUsPage: React.FC<AboutUsPageProps> = ({
 
 
         {/* ================= MISSION & VISION: DUAL VISUAL CARDS ================= */}
-        <section id="mission-vision" className="scroll-mt-24 grid grid-cols-1 md:grid-cols-2 gap-6">
+        <section id="mission-vision" className="scroll-mt-36 grid grid-cols-1 md:grid-cols-2 gap-6">
           {/* Mission */}
           <div className={`p-6 sm:p-8 rounded-3xl border space-y-3 ${darkMode ? 'bg-[#0E2E23]/60 border-white/10' : 'bg-white border-gray-200 shadow-sm'
             }`}>
@@ -254,7 +254,7 @@ export const AboutUsPage: React.FC<AboutUsPageProps> = ({
 
 
         {/* ================= 5-POINT APPROACH: CONNECTED FLOWCHART ================= */}
-        <section id="our-approach" className="scroll-mt-24 space-y-6">
+        <section id="our-approach" className="scroll-mt-36 space-y-6">
           <div className="max-w-3xl space-y-2">
             <span className="text-xs font-bold uppercase tracking-widest text-[#10B981]">
               Integrated Methodology

@@ -72,6 +72,20 @@ export const Navigation: React.FC<NavigationProps> = ({
     return () => document.removeEventListener('mousedown', handleClickOutside);
   }, []);
 
+  // Global Hotkey (Ctrl + K / Cmd + K) for Command Palette / Quick Search
+  useEffect(() => {
+    const handleKeyDown = (e: KeyboardEvent) => {
+      if ((e.ctrlKey || e.metaKey) && e.key.toLowerCase() === 'k') {
+        e.preventDefault();
+        setSearchModalOpen(prev => !prev);
+      } else if (e.key === 'Escape') {
+        setSearchModalOpen(false);
+      }
+    };
+    window.addEventListener('keydown', handleKeyDown);
+    return () => window.removeEventListener('keydown', handleKeyDown);
+  }, []);
+
   const handleMouseEnterNav = (menu: 'what-we-do' | 'about-us') => {
     if (navMenuTimeoutRef.current) clearTimeout(navMenuTimeoutRef.current);
     setActiveDropdown(menu);
@@ -98,7 +112,7 @@ export const Navigation: React.FC<NavigationProps> = ({
   const currentLangObj = LANGUAGES_LIST.find(l => l.code === language) || LANGUAGES_LIST[0];
 
   // Primary navigation links:
-  // Home | What We Do | About Us | Detection Platform | Dashboard | Architecture & Research
+  // Home | What We Do | About Us | Biodiversity | Detection Platform | Dashboard | Architecture & Research
   const navItems = [
     { id: 'home' as AppPage, label: dict?.navHome || 'Home' },
     {
@@ -113,9 +127,13 @@ export const Navigation: React.FC<NavigationProps> = ({
       hasDropdown: true,
       dropdownKey: 'about-us' as const,
     },
+    {
+      id: 'biodiversity' as AppPage,
+      label: dict?.navBiodiversity || 'Biodiversity',
+    },
     { id: 'detect' as AppPage, label: dict?.navDetect || 'Detection Platform' },
     { id: 'dashboard' as AppPage, label: dict?.navDashboard || 'Dashboard' },
-    { id: 'architecture' as AppPage, label: 'Architecture' },
+    { id: 'architecture' as AppPage, label: dict?.navArchitecture || 'Architecture' },
   ];
 
   // Secondary subnav tabs for "What We Do" (mirroring traffic.org clean topic subnav)
@@ -139,12 +157,18 @@ export const Navigation: React.FC<NavigationProps> = ({
 
   // Quick search keywords
   const searchSuggestions = [
-    { title: 'Pangolin Scales & Derivatives', category: 'CITES Appendix I', page: 'detect' as AppPage },
-    { title: 'Hathajodi (Monitor Lizard Hemipenes)', category: 'Hindi Codeword Resolution', page: 'what-we-do' as AppPage, section: 'ai-analysis' },
-    { title: 'White Jade / Schreger Ivory Obfuscation', category: 'Trade Indicator', page: 'what-we-do' as AppPage, section: 'ai-analysis' },
-    { title: 'Western Ghats Biodiversity Hotspot', category: 'Hotspot Explorer', page: 'biodiversity' as AppPage },
-    { title: 'Radiated Tortoise Exotic Pet Trade', category: 'Sample Dossier', page: 'detect' as AppPage },
-    { title: 'Investigative Audit Queue & Telemetry', category: 'Dashboard', page: 'dashboard' as AppPage },
+    { title: 'Pangolin Scales & Keratin Derivatives', category: 'CITES Appendix I • Critical Protection', page: 'detect' as AppPage },
+    { title: 'Hathajodi (Bengal Monitor Lizard Hemipenis)', category: 'Hindi Codeword Resolution • WPA Sch. I', page: 'what-we-do' as AppPage, section: 'ai-analysis' },
+    { title: 'Indian Star Tortoise (Vaastu Pet Trade)', category: 'Live Exotic Reptile • WPA Sch. I', page: 'detect' as AppPage },
+    { title: 'White Jade / Schreger Ivory Carvings', category: 'Trade Indicator • Forensic Identification', page: 'what-we-do' as AppPage, section: 'ai-analysis' },
+    { title: 'Bengal Tiger Claws, Skin & Bones', category: 'CITES Appendix I • High Threat', page: 'what-we-do' as AppPage, section: 'biodiversity-awareness' },
+    { title: 'Western Ghats Biodiversity Hotspot', category: 'Hotspot Explorer • 3D Planetary Map', page: 'biodiversity' as AppPage },
+    { title: 'Sundarbans Mangrove Tiger Reserve', category: 'Hotspot Explorer • Estuarine Ecosystem', page: 'biodiversity' as AppPage },
+    { title: 'Indo-Burma Border Wildlife Corridor', category: 'Hotspot Explorer • Transnational Route', page: 'biodiversity' as AppPage },
+    { title: 'Multimodal Bayesian Fusion Engine', category: 'AI Architecture & Research Flowchart', page: 'architecture' as AppPage },
+    { title: 'WCCB Operation Wildnet VI Protocol', category: 'Statutory & Regulatory Alignment', page: 'what-we-do' as AppPage, section: 'monitoring-insights' },
+    { title: 'Platform Traffic Telemetry (Telegram, OLX, Meta)', category: 'Surveillance Telemetry', page: 'dashboard' as AppPage },
+    { title: 'Print WCCB Case Dossier (PDF/JSON)', category: 'Forensic Case Export Tool', page: 'dashboard' as AppPage },
   ];
 
   const filteredSearchResults = searchSuggestions.filter(s =>
@@ -157,11 +181,11 @@ export const Navigation: React.FC<NavigationProps> = ({
       {/* ================= PRIMARY TRAFFIC-STYLE HEADER ================= */}
       <header
         className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${scrolled
-          ? 'bg-[#0B0F0D]/95 backdrop-blur-md py-2 shadow-2xl border-b border-[#10B981]/25'
-          : 'bg-[#0B0F0D]/90 backdrop-blur-sm py-3 border-b border-white/10'
+          ? 'bg-[#0B0F0D]/95 backdrop-blur-md shadow-2xl border-b border-[#10B981]/25'
+          : 'bg-[#0B0F0D]/90 backdrop-blur-sm border-b border-white/10'
           } text-white`}
       >
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between">
+        <div className={`max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between transition-all duration-300 ${scrolled ? 'py-2' : 'py-3'}`}>
 
           {/* Brand Logo: SAMRAKSH */}
           <button
@@ -221,7 +245,7 @@ export const Navigation: React.FC<NavigationProps> = ({
           {/* Right Utility Controls: Search Icon, Language Selector, Dark Mode, Action CTA */}
           <div className="hidden sm:flex items-center gap-2.5">
 
-            {/* Search Trigger (TRAFFIC signature) */}
+            {/* Search Trigger */}
             <button
               onClick={() => setSearchModalOpen(true)}
               className="p-2 rounded-full text-gray-300 hover:text-white hover:bg-white/10 transition-colors cursor-pointer"
@@ -360,48 +384,45 @@ export const Navigation: React.FC<NavigationProps> = ({
             </div>
           </div>
         )}
-      </header>
 
-
-      {/* ================= SECONDARY STICKY SUB-NAVIGATION BAR (TRAFFIC SIGNATURE) ================= */}
-      {/* Mirroring https://www.traffic.org/about-us/illegal-wildlife-trade/ topic subnav */}
-      {(currentPage === 'what-we-do' || currentPage === 'about-us') && (
-        <div
-          className="fixed top-[60px] sm:top-[66px] left-0 right-0 z-40 animate-traffic-subnav"
-          style={{ background: '#111815', borderTop: '1px solid #1E2E27', borderBottom: '1px solid #1E2E27' }}
-        >
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-center h-11 text-xs">
-            <div className="flex items-center space-x-2 sm:space-x-6 overflow-x-auto no-scrollbar py-1">
-              {(currentPage === 'what-we-do' ? whatWeDoSubSections : aboutUsSubSections).map((sub) => {
-                const isSelected = activeSubSection === sub.id;
-                return (
-                  <button
-                    key={sub.id}
-                    onClick={() => {
-                      setActiveSubSection(sub.id);
-                      if (sub.sectionId) {
-                        const el = document.getElementById(sub.sectionId);
-                        if (el) el.scrollIntoView({ behavior: 'smooth' });
-                      } else {
-                        window.scrollTo({ top: 0, behavior: 'smooth' });
-                      }
-                    }}
-                    className={`relative py-1.5 px-3 text-[12.5px] font-medium transition-colors cursor-pointer whitespace-nowrap ${isSelected
-                      ? 'text-[#34D399] font-bold'
-                      : 'text-gray-300 hover:text-[#34D399]'
-                      }`}
-                  >
-                    <span>{sub.label}</span>
-                    {isSelected && (
-                      <span className="absolute bottom-0 left-3 right-3 h-[2px] bg-[#34D399]" />
-                    )}
-                  </button>
-                );
-              })}
+        {/* ================= SECONDARY STICKY SUB-NAVIGATION BAR (TRAFFIC SIGNATURE) ================= */}
+        {(currentPage === 'what-we-do' || currentPage === 'about-us') && (
+          <div
+            className="w-full border-t border-[#1E2E27] bg-[#111815] animate-traffic-subnav"
+          >
+            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-center h-11 text-xs">
+              <div className="flex items-center space-x-2 sm:space-x-6 overflow-x-auto no-scrollbar py-1">
+                {(currentPage === 'what-we-do' ? whatWeDoSubSections : aboutUsSubSections).map((sub) => {
+                  const isSelected = activeSubSection === sub.id;
+                  return (
+                    <button
+                      key={sub.id}
+                      onClick={() => {
+                        setActiveSubSection(sub.id);
+                        if (sub.sectionId) {
+                          const el = document.getElementById(sub.sectionId);
+                          if (el) el.scrollIntoView({ behavior: 'smooth' });
+                        } else {
+                          window.scrollTo({ top: 0, behavior: 'smooth' });
+                        }
+                      }}
+                      className={`relative py-1.5 px-3 text-[12.5px] font-medium transition-colors cursor-pointer whitespace-nowrap ${isSelected
+                        ? 'text-[#34D399] font-bold'
+                        : 'text-gray-300 hover:text-[#34D399]'
+                        }`}
+                    >
+                      <span>{sub.label}</span>
+                      {isSelected && (
+                        <span className="absolute bottom-0 left-3 right-3 h-[2px] bg-[#34D399]" />
+                      )}
+                    </button>
+                  );
+                })}
+              </div>
             </div>
           </div>
-        </div>
-      )}
+        )}
+      </header>
 
 
       {/* ================= SEARCH MODAL DRAWER ================= */}
@@ -413,12 +434,17 @@ export const Navigation: React.FC<NavigationProps> = ({
                 <Search className="w-5 h-5 text-[#34D399]" />
                 <span className="font-serif text-lg font-bold">Search SAMRAKSH Intelligence Hub</span>
               </div>
-              <button
-                onClick={() => setSearchModalOpen(false)}
-                className="p-1 rounded-lg hover:bg-white/10 text-gray-400 hover:text-white"
-              >
-                <X className="w-5 h-5" />
-              </button>
+              <div className="flex items-center gap-2">
+                <span className="text-[10px] font-mono text-gray-400 bg-white/10 px-2 py-0.5 rounded border border-white/10">
+                  ESC to close
+                </span>
+                <button
+                  onClick={() => setSearchModalOpen(false)}
+                  className="p-1 rounded-lg hover:bg-white/10 text-gray-400 hover:text-white cursor-pointer"
+                >
+                  <X className="w-5 h-5" />
+                </button>
+              </div>
             </div>
 
             {/* Input */}

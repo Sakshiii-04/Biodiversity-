@@ -35,6 +35,16 @@
     overflow-x: hidden;
   }
 
+  ::selection {
+    background-color: #10B981 !important;
+    color: #ffffff !important;
+  }
+
+  ::-moz-selection {
+    background-color: #10B981 !important;
+    color: #ffffff !important;
+  }
+
   h1, h2, h3, h4, .font-editorial {
     font-family: var(--font-serif);
   }
@@ -176,3 +186,48 @@
 .animate-traffic-subnav {
   animation: trafficSubnavSlide 0.25s ease-out forwards;
 }
+
+/* Marquee for Live Ticker */
+@keyframes marquee {
+  0% {
+    transform: translateX(0%);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+.animate-marquee {
+  display: inline-flex;
+  animation: marquee 32s linear infinite;
+}
+
+/* Hide Google Translate top toolbar banner & popups for a native feel */
+.goog-te-banner-frame.skiptranslate,
+.goog-te-banner-frame,
+iframe.goog-te-banner-frame {
+  display: none !important;
+}
+
+body {
+  top: 0px !important;
+}
+
+.goog-tooltip,
+.goog-tooltip:hover {
+  display: none !important;
+}
+
+.goog-text-highlight {
+  background-color: transparent !important;
+  box-shadow: none !important;
+}
+
+#goog-gt-tt {
+  display: none !important;
+}
+
+.skiptranslate:not(.goog-te-combo) {
+  display: none !important;
+}
+

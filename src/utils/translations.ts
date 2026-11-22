@@ -38,7 +38,7 @@ export const TRANSLATIONS: Record<SupportedLanguage, TranslationDictionary> = {
     navHome: 'Home',
     navWhatWeDo: 'What We Do',
     navAboutUs: 'About Us',
-    navBiodiversity: 'Explore Biodiversity',
+    navBiodiversity: 'Biodiversity',
     navDetect: 'Detection Platform',
     navDashboard: 'Dashboard',
     navArchitecture: 'Architecture',

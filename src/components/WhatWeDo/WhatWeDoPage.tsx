@@ -141,7 +141,7 @@ export const WhatWeDoPage: React.FC<WhatWeDoPageProps> = ({
 
 
         {/* ================= FLOWCHART: COMPLETE SYSTEM PIPELINE ARCHITECTURE ================= */}
-        <section id="digital-detection" className="scroll-mt-24 space-y-8">
+        <section id="digital-detection" className="scroll-mt-36 space-y-8">
           <div className="max-w-3xl space-y-2">
             <span className="text-xs font-bold uppercase tracking-widest text-[#10B981]">
               Pillar A — Technical Flowchart
@@ -253,7 +253,7 @@ export const WhatWeDoPage: React.FC<WhatWeDoPageProps> = ({
 
 
         {/* ================= PILLAR B: CODEWORD RESOLUTION MATRIX ================= */}
-        <section id="ai-analysis" className="scroll-mt-24 space-y-8">
+        <section id="ai-analysis" className="scroll-mt-36 space-y-8">
           <div className="max-w-3xl space-y-2">
             <span className="text-xs font-bold uppercase tracking-widest text-[#10B981]">
               Pillar B — Forensic Codeword Resolution
@@ -336,7 +336,7 @@ export const WhatWeDoPage: React.FC<WhatWeDoPageProps> = ({
 
 
         {/* ================= PILLAR C: SPECIES AT RISK ================= */}
-        <section id="biodiversity-awareness" className="scroll-mt-24 space-y-8">
+        <section id="biodiversity-awareness" className="scroll-mt-36 space-y-8">
           <div className="max-w-3xl space-y-2">
             <span className="text-xs font-bold uppercase tracking-widest text-[#10B981]">
               Pillar C — Targeted Wildlife Fauna
@@ -431,7 +431,7 @@ export const WhatWeDoPage: React.FC<WhatWeDoPageProps> = ({
 
 
         {/* ================= PILLAR D & E: TELEMETRY & SAFEGUARDS ================= */}
-        <section id="monitoring-insights" className="scroll-mt-24 space-y-8">
+        <section id="monitoring-insights" className="scroll-mt-36 space-y-8">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-stretch">
 
             {/* Left: Telemetry & Dossier (7 cols) */}

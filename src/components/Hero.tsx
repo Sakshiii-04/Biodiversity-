@@ -94,7 +94,7 @@ export const Hero: React.FC<HeroProps> = ({
   };
 
   return (
-    <section className={`relative h-screen max-h-screen w-full flex flex-col justify-between overflow-hidden pt-16 pb-3 transition-colors duration-300 select-none ${
+    <section className={`relative min-h-[92vh] lg:min-h-screen w-full flex flex-col justify-between overflow-hidden pt-20 pb-4 transition-colors duration-300 select-none ${
       darkMode ? 'text-[#E4F4F5]' : 'text-[#1E3A2F]'
     }`}>
       {/* Dynamic Nature Wallpapers Layer */}
@@ -187,9 +187,11 @@ export const Hero: React.FC<HeroProps> = ({
             )}
           </div>
 
-          {/* Stats Bar */}
-          <div className={`pt-3.5 grid grid-cols-3 gap-3 border-t max-w-sm ${
-            darkMode ? 'border-[#10B981]/25' : 'border-[#10B981]/20'
+          {/* Stats Bar with Frosted Glass Backing */}
+          <div className={`p-4 rounded-2xl backdrop-blur-md border shadow-sm grid grid-cols-3 gap-3 max-w-md ${
+            darkMode 
+              ? 'bg-[#061822]/75 border-[#10B981]/25 text-[#E4F4F5]' 
+              : 'bg-white/80 border-[#10B981]/25 text-[#0A2E20]'
           }`}>
             <div>
               <div className={`font-serif text-[28px] lg:text-[32px] font-bold ${

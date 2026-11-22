@@ -1,5 +1,5 @@
 import React from 'react';
-import { ScanSearch, FileSearch, ShieldCheck, ArrowRight, Sparkles } from 'lucide-react';
+import { ScanSearch, FileSearch, ShieldCheck, ArrowRight, Sparkles, Scale, Globe2, Landmark } from 'lucide-react';
 
 interface MissionProps {
   onDetectClick: () => void;
@@ -90,6 +90,50 @@ export const Mission: React.FC<MissionProps> = ({
                 "Over 7,000 species are threatened by the digital black market annually."
               </p>
               <span className="text-[11px] text-emerald-200/80 block mt-1">— UNODC World Wildlife Crime Report & WCCB India</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      {/* Institutional Framework & Regulatory Alignment Bar */}
+      <div className={`mb-16 p-6 rounded-2xl border transition-colors ${
+        darkMode 
+          ? 'bg-[#0E2E23]/40 border-[#10B981]/20 text-gray-200' 
+          : 'bg-[#FAF8F5] border-[#10B981]/25 text-[#0A2E20]'
+      }`}>
+        <div className="flex flex-col md:flex-row md:items-center justify-between gap-4">
+          <div className="space-y-1">
+            <span className="text-[10px] uppercase font-bold tracking-widest text-[#10B981]">
+              Regulatory & Inter-Agency Alignment
+            </span>
+            <h4 className="font-serif text-lg font-medium">
+              Standardized Against Global & National Enforcement Protocols
+            </h4>
+          </div>
+          <div className="flex flex-wrap items-center gap-2.5">
+            <div className={`inline-flex items-center gap-2 px-3 py-1.5 rounded-lg text-xs font-semibold border ${
+              darkMode ? 'bg-[#061822]/80 border-emerald-500/30 text-emerald-300' : 'bg-white border-emerald-600/20 text-emerald-800'
+            }`}>
+              <Globe2 className="w-3.5 h-3.5 text-[#10B981]" />
+              <span>UN SDG 15 & 16</span>
+            </div>
+            <div className={`inline-flex items-center gap-2 px-3 py-1.5 rounded-lg text-xs font-semibold border ${
+              darkMode ? 'bg-[#061822]/80 border-emerald-500/30 text-emerald-300' : 'bg-white border-emerald-600/20 text-emerald-800'
+            }`}>
+              <ShieldCheck className="w-3.5 h-3.5 text-[#10B981]" />
+              <span>WCCB Op Wildnet VI</span>
+            </div>
+            <div className={`inline-flex items-center gap-2 px-3 py-1.5 rounded-lg text-xs font-semibold border ${
+              darkMode ? 'bg-[#061822]/80 border-emerald-500/30 text-emerald-300' : 'bg-white border-emerald-600/20 text-emerald-800'
+            }`}>
+              <Scale className="w-3.5 h-3.5 text-[#10B981]" />
+              <span>CITES App. I–III</span>
+            </div>
+            <div className={`inline-flex items-center gap-2 px-3 py-1.5 rounded-lg text-xs font-semibold border ${
+              darkMode ? 'bg-[#061822]/80 border-emerald-500/30 text-emerald-300' : 'bg-white border-emerald-600/20 text-emerald-800'
+            }`}>
+              <Landmark className="w-3.5 h-3.5 text-[#10B981]" />
+              <span>TRAFFIC Standards</span>
             </div>
           </div>
         </div>
