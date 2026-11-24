@@ -848,27 +848,7 @@ export const EarthGlobe: React.FC<EarthGlobeProps> = ({
           </button>
         </div>
 
-        {/* Quick Continent Fly-To (Text increased by 3px) */}
-        <div className="hidden sm:flex flex-wrap justify-end gap-1 max-w-xs">
-          <button
-            onClick={() => jumpToRegion(16.5, 101.0)}
-            className="bg-white hover:bg-[#E4F4F5] text-[#0B3A4A] text-[13px] font-semibold px-3 py-1 rounded-full shadow-sm border border-gray-100 cursor-pointer"
-          >
-            Indo-Burma
-          </button>
-          <button
-            onClick={() => jumpToRegion(-18.7, 46.8)}
-            className="bg-white hover:bg-[#E4F4F5] text-[#0B3A4A] text-[13px] font-semibold px-3 py-1 rounded-full shadow-sm border border-gray-100 cursor-pointer"
-          >
-            Madagascar
-          </button>
-          <button
-            onClick={() => jumpToRegion(-9.2, -75.0)}
-            className="bg-white hover:bg-[#E4F4F5] text-[#0B3A4A] text-[13px] font-semibold px-3 py-1 rounded-full shadow-sm border border-gray-100 cursor-pointer"
-          >
-            Andes
-          </button>
-        </div>
+
       </div>
 
       {/* Prominent Zoom (+ / −) Controls on the Earth */}

@@ -1,7 +1,7 @@
 # Project Summary — Illegal Wildlife Trade Detection System
 > **Status:** Pre-prototype · Research & Architecture phase  
 > **Event context:** SUSTAINOVA 2026 Ideathon (SDG 15) — Round 1 deadline 18 Nov 2026, Round 2 offline 26 Nov 2026  
-> **Project name:** TBD (team to decide; not "Sustainova" — that is the event name)  
+> **Project name:** SAMRAKSH  
 > **Team:** 4 members · Acropolis Institute of Technology and Research, Indore
 
 ---

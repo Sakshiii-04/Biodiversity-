@@ -7,6 +7,10 @@ import tailwindcss from '@tailwindcss/vite'
 export default defineConfig({
   plugins: [react(), tailwindcss()],
   server: {
-    allowedHosts: ['density-clutter-savings.ngrok-free.dev'],
+    allowedHosts: true,
+  },
+  preview: {
+    allowedHosts: true,
+    port: 5173,
   },
 })

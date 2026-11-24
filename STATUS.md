@@ -1,6 +1,6 @@
 # STATUS.md - shared handoff for all humans and AI agents
 
-Read this file in full at the start of every session, after AGENTS.md. Update it at the end of every task. Last updated: 2026-11-17.
+Read this file in full at the start of every session, after AGENTS.md. Update it at the end of every task. Last updated: 2026-11-24.
 
 ## Next up
 
@@ -50,10 +50,12 @@ Settled decisions. Do not reopen without asking the user.
     - User approved Option A: Backend will output these exact frontend string literals to maintain 100% compatibility with frontend fallback and types, with Pydantic schemas validating them.
     - Database architecture designed alongside backend using SQLAlchemy models (cases, identified_species, suspicious_indicators, case_audit_logs).
 
+12. Final project name settled as SAMRAKSH (संरक्ष) with tagline "Vigilance for the Wild in the Digital Era." User explicitly approved frontend rebranding, redesign, new What We Do & About Us pages, and navigation overhaul per Rule 7.
+
 ## Open questions
 
 1. Resolved: Prediction literals and inputType aligned to src/types/index.ts (see Decision 11).
-2. Final project name (team decision).
+2. Final project name (Resolved: SAMRAKSH / संरक्ष; see Decision 12).
 3. Who owns which lane? Fill the Owner column when tasks are claimed.
 
 ## Requests for the frontend owner
@@ -72,6 +74,7 @@ Append one line per event, newest at the bottom. Format: date - person or agent 
 - 2026-11-18 - Arijeet Singh & Antigravity - Completed Task 2.3: implemented TF-IDF baseline and BaselineTextClassifier; trained and evaluated on group-aware split (PR-AUC 0.9112, F1 0.8382); saved baseline_metrics.json and baseline_tfidf.joblib. All gates passed.
 - 2026-11-18 - Arijeet Singh & Antigravity - Completed Task 2.4: implemented XLM-RoBERTa tokenization, dataset class, training arguments, weighted trainer logic, lazy XLMROnlineClassifier inference wrapper, and Kaggle/Colab training notebook (02_xlm_roberta_training.ipynb). All quality gates passed.
 - 2026-11-18 - Arijeet Singh & Antigravity - Completed Task 2.5: implemented CLIP zero-shot image classification module (image_classifier.py), base64 image decoder, positive and negative prompt sets, lazy CLIPOnlineClassifier wrapper, and unit tests. All quality gates passed. Frontend untouched.
+- 2026-11-18 - Antigravity - User selected name SAMRAKSH (संरक्ष) and tagline "Vigilance for the Wild in the Digital Era." User granted explicit override under Rule 7 to execute website rebranding, redesign, What We Do, About Us, and animated navigation.
 - 2026-11-19 - Arijeet Singh & Antigravity - Completed Task 2.6: connected score fusion (0.6 text + 0.4 image), CITES taxonomy/trade indicator scanning (data/lexicons/), and /analyze endpoints. All 26 tests passed. Quality gates clean. Frontend untouched.
 - 2026-11-19 - Arijeet Singh & Antigravity - Completed Task 3.2: created data/lexicons/india_codewords.json (12 Indian codewords: hathajodi, safed sona, khurpa, kasturi, shahtoosh, etc.); integrated into taxonomy matching and CLIP prompts; tested hathajodi and safed sona API triggers. All 30 tests passed. Frontend untouched.
 - 2026-11-19 - Arijeet Singh & Antigravity - Completed Task 4.1: created backend/Dockerfile (multi-stage Python 3.11, non-root user, healthcheck), docker-compose.yml with persistent volume mounts, backend/.dockerignore, and backend/.env.example. All quality gates clean.

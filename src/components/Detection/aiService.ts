@@ -35,9 +35,29 @@ const TAXONOMY_DATABASE: SpeciesEntry[] = [
   {
     commonName: 'Tiger (Bone, Skins, Wine, Canines)',
     scientificName: 'Panthera tigris',
-    citesStatus: 'CITES Appendix I',
+    citesStatus: 'CITES Appendix I (WPA Schedule I)',
     conservationStatus: 'Endangered',
     keywords: ['tiger', 'tiger bone', 'tiger skin', 'canine tooth', 'tiger wine', 'panthera']
+  },
+  {
+    commonName: 'Bengal Monitor Lizard (Hathajodi / Dried Hemipenis)',
+    scientificName: 'Varanus bengalensis',
+    citesStatus: 'CITES Appendix I (WPA 1972 Schedule I)',
+    conservationStatus: 'Endangered / Strictly Protected',
+    keywords: [
+      'hathajodi',
+      'hatha jodi',
+      'hatha jorhi',
+      'hatha-jodi',
+      'monitor lizard',
+      'varanus',
+      'pooja root',
+      'puja root',
+      'shri yantra root',
+      'lizard hemipenis',
+      'tantric root',
+      'khurpa'
+    ]
   },
   {
     commonName: 'Radiated Tortoise / Ploughshare Tortoise',
@@ -84,11 +104,11 @@ const TAXONOMY_DATABASE: SpeciesEntry[] = [
 ];
 
 const SUSPICIOUS_TRADE_INDICATORS = [
-  { trigger: ['dm for price', 'pm for price', 'dm me', 'inbox me', 'contact whatsapp', 'telegram'], label: 'Private Messaging / Off-Platform Solicitation', severity: 'high' as const, desc: 'Diverts buyers from public moderation to encrypted private chat channels.' },
-  { trigger: ['discreet shipping', 'door delivery', 'worldwide delivery', 'air courier', 'safe arrival guarantee'], label: 'Evasive Courier Logistics', severity: 'high' as const, desc: 'Offers international delivery of live or restricted wildlife without legal quarantine permits.' },
-  { trigger: ['fresh stock', 'wholesale', 'dry scales', 'bulk orders', 'per kg', 'kilos available'], label: 'Commercial Bulk Scale Trade', severity: 'high' as const, desc: 'Commercial quantities indicating syndicated illicit supply chains.' },
-  { trigger: ['no papers', 'without permits', 'adoption fee', 'adoption'], label: 'Permit Evasion or Disguised Commercial Sale', severity: 'medium' as const, desc: 'Avoiding CITES documentation or masking sales as private pet adoptions.' },
-  { trigger: ['carved white bone', 'natural grain', 'antique bone'], label: 'Ivory Code-Word Obfuscation', severity: 'high' as const, desc: 'Common disguised terminology used to bypass algorithmic filters for elephant ivory.' }
+  { trigger: ['dm for price', 'pm for price', 'dm me', 'inbox me', 'contact whatsapp', 'whatsapp', 'telegram', 'ping me', 'dm on whatsapp', 'inbox for details', 'contact on whatsapp'], label: 'Private Messaging / Off-Platform Solicitation', severity: 'high' as const, desc: 'Diverts buyers from public moderation to encrypted private chat channels (WhatsApp/Telegram).' },
+  { trigger: ['discreet shipping', 'door delivery', 'worldwide delivery', 'air courier', 'safe arrival guarantee', 'direct delivery', 'safe shipping', 'discreet courier', 'express delivery'], label: 'Evasive Courier Logistics', severity: 'high' as const, desc: 'Offers transport of live or restricted wildlife without legal quarantine or transit permits.' },
+  { trigger: ['fresh stock', 'wholesale', 'dry scales', 'bulk orders', 'per kg', 'kilos available', '100% natural', 'authentic', 'consecrated', 'energized', 'genuine specimen'], label: 'Commercial Bulk Scale / Fraudulent Authenticity Claim', severity: 'high' as const, desc: 'Commercial quantities or ritual authenticity claims indicating syndicated illicit supply chains.' },
+  { trigger: ['no papers', 'without permits', 'adoption fee', 'adoption', 'rehoming fee', 'nominal fee'], label: 'Permit Evasion or Disguised Commercial Sale', severity: 'medium' as const, desc: 'Avoiding CITES documentation or masking commercial wildlife sales as private pet adoptions.' },
+  { trigger: ['carved white bone', 'natural grain', 'antique bone', 'white jade', 'schreger lines'], label: 'Ivory Code-Word Obfuscation', severity: 'high' as const, desc: 'Disguised terminology used to bypass algorithmic text filters for elephant ivory.' }
 ];
 
 const BENIGN_INDICATORS = [
@@ -97,7 +117,7 @@ const BENIGN_INDICATORS = [
 ];
 
 export async function analyzeContentWithAI(
-  input: { type: 'screenshot' | 'url'; data: string; extractedText?: string },
+  input: { type: 'screenshot' | 'url' | 'text'; data: string; extractedText?: string },
   apiKey?: string
 ): Promise<AnalysisResult> {
   const envKey = (import.meta as any).env?.VITE_GEMINI_API_KEY || apiKey;
@@ -150,7 +170,7 @@ Return your evaluation in strict JSON format with keys:
           id: `WID-${new Date().getFullYear()}-${Math.floor(1000 + Math.random() * 9000)}`,
           submissionDate: new Date().toISOString().replace('T', ' ').substring(0, 16) + ' UTC',
           inputType: input.type,
-          inputSource: input.type === 'url' ? input.data : 'user_uploaded_screenshot',
+          inputSource: input.type === 'url' ? input.data : (input.type === 'text' ? 'Direct Text Caption Intake' : 'Uploaded Screenshot'),
           prediction: parsed.prediction || 'REQUIRES MANUAL REVIEW',
           confidenceScore: parsed.confidenceScore || 0.85,
           identifiedSpecies: parsed.identifiedSpecies || [],
@@ -236,7 +256,7 @@ Return your evaluation in strict JSON format with keys:
     id: `WID-${new Date().getFullYear()}-${Math.floor(1000 + Math.random() * 9000)}`,
     submissionDate: new Date().toISOString().replace('T', ' ').substring(0, 16) + ' UTC',
     inputType: input.type,
-    inputSource: input.type === 'url' ? input.data : 'Uploaded Screenshot',
+    inputSource: input.type === 'url' ? input.data : (input.type === 'text' ? 'Direct Text Caption Intake' : 'Uploaded Screenshot'),
     prediction,
     confidenceScore: confidence,
     identifiedSpecies: matchedSpecies.map(s => ({

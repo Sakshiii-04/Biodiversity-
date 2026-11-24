@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { EarthGlobe } from './Globe/EarthGlobe';
 import { HotspotType, IncidentType } from '../types';
-import { Sparkles, ChevronRight, Wind, ChevronDown } from 'lucide-react';
+import { Sparkles, ChevronRight, Wind, ChevronDown, ArrowRight, ShieldCheck } from 'lucide-react';
 import { TranslationDictionary } from '../utils/translations';
 
 export interface NatureWallpaper {
@@ -11,7 +11,7 @@ export interface NatureWallpaper {
   biome: string;
 }
 
-// User-provided wallpapers from user upload
+// Nature wallpapers
 export const NATURE_WALLPAPERS: NatureWallpaper[] = [
   {
     name: 'Glacial Alpine Lagoon',
@@ -61,6 +61,7 @@ interface HeroProps {
   hotspots: HotspotType[];
   incidents: IncidentType[];
   onNavigateToDetect: () => void;
+  onNavigateToWhatWeDo?: () => void;
   onNavigateToMission: () => void;
   dict?: TranslationDictionary;
   darkMode?: boolean;
@@ -70,6 +71,7 @@ export const Hero: React.FC<HeroProps> = ({
   hotspots,
   incidents,
   onNavigateToDetect,
+  onNavigateToWhatWeDo,
   onNavigateToMission,
   dict,
   darkMode = false
@@ -92,10 +94,10 @@ export const Hero: React.FC<HeroProps> = ({
   };
 
   return (
-    <section className={`relative h-screen max-h-screen w-full flex flex-col justify-between overflow-hidden pt-16 pb-3 transition-colors duration-300 select-none ${
-      darkMode ? 'text-[#E4F4F5]' : 'text-[#3A5A64]'
+    <section className={`relative min-h-[92vh] lg:min-h-screen w-full flex flex-col justify-between overflow-hidden pt-20 pb-4 transition-colors duration-300 select-none ${
+      darkMode ? 'text-[#E4F4F5]' : 'text-[#1E3A2F]'
     }`}>
-      {/* Dynamic Nature Wallpapers Layer: Using the user's uploaded images */}
+      {/* Dynamic Nature Wallpapers Layer */}
       <div className="absolute inset-0 z-0 overflow-hidden pointer-events-none select-none">
         {NATURE_WALLPAPERS.map((wp, idx) => (
           <div
@@ -107,102 +109,118 @@ export const Hero: React.FC<HeroProps> = ({
           />
         ))}
 
-        {/* Directional Vignette Gradient Wash */}
+        {/* Directional Vignette Gradient Wash with Nature-Inspired Tones */}
         <div className={`absolute inset-0 pointer-events-none transition-colors duration-500 ${
           darkMode
             ? 'bg-gradient-to-r from-[#061822]/95 via-[#061822]/65 to-[#061822]/25'
-            : 'bg-gradient-to-r from-[#F7F2E7]/92 via-[#F7F2E7]/55 to-[#F7F2E7]/20'
+            : 'bg-gradient-to-r from-[#FAF8F5]/94 via-[#FAF8F5]/60 to-[#FAF8F5]/20'
         }`} />
       </div>
 
-      {/* Main Grid: Fits 100% within initial screen without scrolling (User Request: "till yaha tak same screen mein chiaye") */}
+      {/* Main Grid: Fits 100% within initial screen without scrolling */}
       <div className="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8 w-full z-10 grid grid-cols-1 lg:grid-cols-12 gap-4 lg:gap-8 items-center flex-1 my-auto min-h-0">
+        
         {/* Left Column: Clean Editorial Headline & Content */}
         <div className="lg:col-span-5 space-y-3.5 lg:pr-2 text-left z-20">
-          {/* Eyebrow Pill Badge */}
-          <div className={`inline-flex items-center gap-2 px-4 py-1.5 rounded-full border text-[14px] font-bold uppercase tracking-widest shadow-sm ${
+          
+          {/* Brand Eyebrow Pill Badge */}
+          <div className={`inline-flex items-center gap-2 px-4 py-1.5 rounded-full border text-[13px] font-bold uppercase tracking-widest shadow-sm ${
             darkMode
-              ? 'bg-[#0B2533]/90 border-[#1FB6C9]/40 text-[#9BF0FB]'
-              : 'bg-[#E4F4F5] border-[#1FB6C9]/25 text-[#0B3A4A]'
+              ? 'bg-[#0E2E23]/90 border-[#10B981]/40 text-[#A7F3D0]'
+              : 'bg-[#E8F5EE] border-[#10B981]/30 text-[#0A2E20]'
           }`}>
-            <span className="w-2.5 h-2.5 rounded-full bg-[#1FB6C9] animate-pulse" />
-            {dict?.heroEyebrow || 'INDIA-FIRST MULTIMODAL WILDLIFE TRADE INTELLIGENCE'}
+            <ShieldCheck className="w-4 h-4 text-[#10B981]" />
+            <span>INDIA-FIRST MULTIMODAL WILDLIFE INTELLIGENCE PLATFORM</span>
           </div>
 
-          {/* Cormorant Garamond Main Headline: Bold & Clean (Decreased by 4px per user request) */}
-          <h1 className={`font-serif text-[32px] sm:text-[38px] lg:text-[48px] xl:text-[54px] font-bold leading-[1.08] tracking-tight ${
-            darkMode ? 'text-white' : 'text-[#0B3A4A]'
+          {/* Cormorant Garamond Main Headline */}
+          <h1 className={`font-serif text-[32px] sm:text-[38px] lg:text-[46px] xl:text-[52px] font-bold leading-[1.08] tracking-tight ${
+            darkMode ? 'text-white' : 'text-[#0A2E20]'
           }`}>
             {dict?.heroTitleLine1 || 'The Wild Is Under Threat.'}
             <br />
-            <span className={`italic font-bold relative ${darkMode ? 'text-[#E4F4F5]' : 'text-[#0B3A4A]'}`}>
+            <span className={`italic font-bold relative ${darkMode ? 'text-[#E4F4F5]' : 'text-[#0A2E20]'}`}>
               {dict?.heroTitleLine2Pre || 'We Follow the '}
-              <span className="text-[#1FB6C9] not-italic">
+              <span className="text-[#10B981] dark:text-[#34D399] not-italic">
                 {dict?.heroTitleLine2Highlight || 'Digital Trail.'}
               </span>
             </span>
           </h1>
 
-          {/* Description (Increased by 3px) */}
-          <p className={`text-[15px] sm:text-[17px] font-medium leading-relaxed max-w-md ${
-            darkMode ? 'text-[#CBD5E1]' : 'text-[#3A5A64]'
+          {/* Description */}
+          <p className={`text-[15px] sm:text-[16.5px] font-medium leading-relaxed max-w-md ${
+            darkMode ? 'text-[#CBD5E1]' : 'text-[#2D5A46]'
           }`}>
-            {dict?.heroDescription || 'Illegal wildlife trade is increasingly moving into digital spaces. WILDINTEL uses AI-assisted text and image analysis to identify suspicious wildlife-trade content and support evidence-based investigations.'}
+            {dict?.heroDescription || 'Illegal wildlife trade has rapidly migrated into online marketplaces and encrypted social spaces. SAMRAKSH combines multimodal intelligence, CITES-grounded taxonomy, and investigator workflows to make covert wildlife trafficking visible.'}
           </p>
 
-          {/* Action CTAs (Increased by 3px) */}
+          {/* Action CTAs */}
           <div className="pt-1 flex flex-wrap items-center gap-3">
             <button
               onClick={onNavigateToDetect}
-              className="px-6 py-2.5 rounded-full bg-[#FF7E6B] hover:bg-[#E86350] text-white text-[15px] font-bold uppercase tracking-widest shadow-xl shadow-[#FF7E6B]/35 transition-all hover:scale-105 flex items-center gap-2 cursor-pointer"
+              className="px-6 py-2.5 rounded-full bg-gradient-to-r from-[#10B981] to-[#059669] hover:from-[#059669] hover:to-[#047857] text-white text-[14px] font-bold uppercase tracking-widest shadow-xl shadow-[#10B981]/35 transition-all hover:scale-105 flex items-center gap-2 cursor-pointer"
             >
-              <Sparkles className="w-4 h-4" />
-              <span>{dict?.heroCtaDetect || 'DETECT WILDLIFE TRADE'}</span>
+              <Sparkles className="w-4 h-4 text-emerald-100" />
+              <span>{dict?.heroCtaDetect || 'TEST SUSPICIOUS POST'}</span>
               <ChevronRight className="w-4 h-4" />
             </button>
 
-            <button
-              onClick={onNavigateToMission}
-              className={`text-[15px] font-semibold uppercase tracking-widest transition-colors underline underline-offset-8 decoration-[#1FB6C9]/60 hover:decoration-[#1FB6C9] cursor-pointer ${
-                darkMode ? 'text-[#9BF0FB] hover:text-white' : 'text-[#0B3A4A] hover:text-[#1FB6C9]'
-              }`}
-            >
-              {dict?.heroCtaMission || 'Discover Our Mission'}
-            </button>
+            {onNavigateToWhatWeDo ? (
+              <button
+                onClick={onNavigateToWhatWeDo}
+                className={`text-[14px] font-bold uppercase tracking-widest transition-colors underline underline-offset-8 decoration-[#10B981]/60 hover:decoration-[#10B981] cursor-pointer flex items-center gap-1.5 ${
+                  darkMode ? 'text-[#A7F3D0] hover:text-white' : 'text-[#0A2E20] hover:text-[#10B981]'
+                }`}
+              >
+                <span>{dict?.heroCtaWhatWeDo || 'WHAT WE DO'}</span>
+                <ArrowRight className="w-3.5 h-3.5" />
+              </button>
+            ) : (
+              <button
+                onClick={onNavigateToMission}
+                className={`text-[14px] font-bold uppercase tracking-widest transition-colors underline underline-offset-8 decoration-[#10B981]/60 hover:decoration-[#10B981] cursor-pointer ${
+                  darkMode ? 'text-[#A7F3D0] hover:text-white' : 'text-[#0A2E20] hover:text-[#10B981]'
+                }`}
+              >
+                {dict?.heroCtaMission || 'Our Conservation Mission'}
+              </button>
+            )}
           </div>
 
-          {/* Stats Bar (Numbers increased by 4px, labels by 3px) */}
-          <div className={`pt-3.5 grid grid-cols-3 gap-3 border-t max-w-sm ${
-            darkMode ? 'border-[#1FB6C9]/25' : 'border-[#1FB6C9]/20'
+          {/* Stats Bar with Frosted Glass Backing */}
+          <div className={`p-4 rounded-2xl backdrop-blur-md border shadow-sm grid grid-cols-3 gap-3 max-w-md ${
+            darkMode 
+              ? 'bg-[#061822]/75 border-[#10B981]/25 text-[#E4F4F5]' 
+              : 'bg-white/80 border-[#10B981]/25 text-[#0A2E20]'
           }`}>
             <div>
-              <div className={`font-serif text-[28px] lg:text-[34px] font-bold ${
-                darkMode ? 'text-white' : 'text-[#0B3A4A]'
+              <div className={`font-serif text-[28px] lg:text-[32px] font-bold ${
+                darkMode ? 'text-white' : 'text-[#0A2E20]'
               }`}>
                 {dict?.statHotspots || '10+'}
               </div>
-              <div className={`text-[12px] uppercase font-bold tracking-wider mt-0.5 ${
-                darkMode ? 'text-[#8AAFB8]' : 'text-[#6E8890]'
+              <div className={`text-[11px] uppercase font-bold tracking-wider mt-0.5 ${
+                darkMode ? 'text-[#8AAFB8]' : 'text-[#2D5A46]'
               }`}>
                 {dict?.statHotspotsLabel || 'Hotspots Monitored'}
               </div>
             </div>
             <div>
-              <div className="font-serif text-[28px] lg:text-[34px] font-bold text-[#FF7E6B]">
+              <div className="font-serif text-[28px] lg:text-[32px] font-bold text-[#E86350] dark:text-[#FFA193]">
                 {dict?.statSeized || '8.8k+'}
               </div>
-              <div className={`text-[12px] uppercase font-bold tracking-wider mt-0.5 ${
-                darkMode ? 'text-[#8AAFB8]' : 'text-[#6E8890]'
+              <div className={`text-[11px] uppercase font-bold tracking-wider mt-0.5 ${
+                darkMode ? 'text-[#8AAFB8]' : 'text-[#2D5A46]'
               }`}>
                 {dict?.statSeizedLabel || 'Seizure Records Mapped'}
               </div>
             </div>
             <div>
-              <div className="font-serif text-[28px] lg:text-[34px] font-bold text-[#1FB6C9]">
+              <div className="font-serif text-[28px] lg:text-[32px] font-bold text-[#10B981]">
                 {dict?.statPrecision || '94%'}
               </div>
-              <div className={`text-[12px] uppercase font-bold tracking-wider mt-0.5 ${
-                darkMode ? 'text-[#8AAFB8]' : 'text-[#6E8890]'
+              <div className={`text-[11px] uppercase font-bold tracking-wider mt-0.5 ${
+                darkMode ? 'text-[#8AAFB8]' : 'text-[#2D5A46]'
               }`}>
                 {dict?.statPrecisionLabel || 'Detection Precision'}
               </div>
@@ -210,7 +228,7 @@ export const Hero: React.FC<HeroProps> = ({
           </div>
         </div>
 
-        {/* Right Column: Prominent 3D Earth (Sized to fill available height matching the user's red circle) */}
+        {/* Right Column: Prominent 3D Earth Globe */}
         <div className="lg:col-span-7 relative h-[60vh] sm:h-[68vh] lg:h-[78vh] xl:h-[82vh] max-h-[820px] w-full flex items-center justify-center lg:translate-x-3 overflow-visible">
           <div className="w-full h-full relative bg-transparent overflow-visible">
             <EarthGlobe
@@ -225,37 +243,38 @@ export const Hero: React.FC<HeroProps> = ({
         </div>
       </div>
 
-      {/* Bottom Unified Control Dock: 100% visible on initial screen without scrolling */}
+      {/* Bottom Unified Control Dock */}
       <div className="w-full max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8 z-20 flex items-center justify-between pb-1 select-none shrink-0">
-        {/* Left: Scroll Down Action Button (Text increased by 3px) */}
+        
+        {/* Left: Scroll Down Action Button */}
         <button
           onClick={handleScrollDown}
-          className={`group flex items-center gap-2 px-4 py-2 rounded-full border backdrop-blur-md shadow-sm transition-all hover:scale-105 cursor-pointer text-[14px] font-semibold ${
+          className={`group flex items-center gap-2 px-4 py-2 rounded-full border backdrop-blur-md shadow-sm transition-all hover:scale-105 cursor-pointer text-[13px] font-semibold ${
             darkMode
-              ? 'bg-[#0B2533]/90 border-[#1FB6C9]/30 text-white hover:border-[#1FB6C9]'
-              : 'bg-white/90 border-[#1FB6C9]/25 text-[#0B3A4A] hover:border-[#1FB6C9]'
+              ? 'bg-[#0E2E23]/90 border-[#10B981]/30 text-white hover:border-[#10B981]'
+              : 'bg-white/90 border-[#2D5A46]/20 text-[#0A2E20] hover:border-[#10B981]'
           }`}
-          title="Scroll to Mission & Impact"
+          title="Scroll down to explore"
         >
-          <span className="w-2 h-2 rounded-full bg-[#1FB6C9] group-hover:scale-125 transition-transform" />
-          <span className="uppercase tracking-widest text-[13px] font-bold">SCROLL DOWN</span>
-          <ChevronDown className="w-4 h-4 text-[#1FB6C9] animate-bounce" />
+          <span className="w-2 h-2 rounded-full bg-[#10B981] group-hover:scale-125 transition-transform" />
+          <span className="uppercase tracking-widest text-[12px] font-bold">SCROLL DOWN</span>
+          <ChevronDown className="w-4 h-4 text-[#10B981] animate-bounce" />
         </button>
 
-        {/* Center: Atmospheric Biome Indicator & Wallpaper Selector (Text increased by 3px) */}
-        <div className={`hidden sm:flex items-center gap-2.5 backdrop-blur-md px-4 py-2 rounded-full border shadow-md text-[14px] transition-colors duration-300 ${
+        {/* Center: Atmospheric Biome Indicator & Wallpaper Selector */}
+        <div className={`hidden sm:flex items-center gap-2.5 backdrop-blur-md px-4 py-2 rounded-full border shadow-md text-[13px] transition-colors duration-300 ${
           darkMode
-            ? 'bg-[#0B2533]/85 border-[#1FB6C9]/30 text-[#E4F4F5]'
-            : 'bg-white/85 border-[#1FB6C9]/20 text-[#0B3A4A]'
+            ? 'bg-[#0E2E23]/85 border-[#10B981]/30 text-[#E4F4F5]'
+            : 'bg-white/90 border-[#2D5A46]/20 text-[#0A2E20]'
         }`}>
           <div className="flex items-center gap-1.5">
-            <Wind className="w-4 h-4 text-[#1FB6C9]" />
-            <span className="text-[14px] font-semibold">
-              Atmosphere: <strong className={darkMode ? 'text-[#9BF0FB]' : 'text-[#0B3A4A]'}>{activeWallpaper.name}</strong>
+            <Wind className="w-4 h-4 text-[#10B981]" />
+            <span className="text-[13px] font-semibold">
+              Biome: <strong className={darkMode ? 'text-[#34D399]' : 'text-[#0A2E20]'}>{activeWallpaper.name}</strong>
             </span>
           </div>
 
-          {/* 7 Dots for 7 Nature Wallpapers */}
+          {/* Dots for Nature Wallpapers */}
           <div className={`flex items-center gap-1.5 pl-2 border-l ${
             darkMode ? 'border-gray-700' : 'border-gray-200'
           }`}>
@@ -265,7 +284,7 @@ export const Hero: React.FC<HeroProps> = ({
                 onClick={() => setActiveWallpaperIdx(idx)}
                 className={`w-2.5 h-2.5 rounded-full transition-all cursor-pointer ${
                   activeWallpaperIdx === idx
-                    ? 'bg-[#1FB6C9] ring-2 ring-[#1FB6C9]/40 scale-125'
+                    ? 'bg-[#10B981] ring-2 ring-[#10B981]/40 scale-125'
                     : darkMode ? 'bg-gray-600 hover:bg-gray-500' : 'bg-gray-300 hover:bg-gray-400'
                 }`}
                 title={`Switch to ${wp.name}`}
@@ -274,9 +293,9 @@ export const Hero: React.FC<HeroProps> = ({
           </div>
         </div>
 
-        {/* Spacer to keep center Atmosphere dock balanced (Interactive 3D Earth text removed per user request) */}
         <div className="hidden sm:block w-28 pointer-events-none" />
       </div>
     </section>
   );
 };
+export default Hero;

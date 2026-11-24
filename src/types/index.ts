@@ -54,7 +54,7 @@ export type DetectionPrediction =
 export type AnalysisResult = {
   id: string;
   submissionDate: string;
-  inputType: 'screenshot' | 'url';
+  inputType: 'screenshot' | 'url' | 'text';
   inputSource: string;
   prediction: DetectionPrediction;
   confidenceScore: number;

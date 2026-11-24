@@ -2,18 +2,31 @@
 <html lang="en" class="scroll-smooth">
   <head>
     <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><circle cx='50' cy='50' r='45' fill='%231FB6C9'/><circle cx='50' cy='50' r='25' fill='%23FF7E6B'/><circle cx='50' cy='50' r='10' fill='%230B3A4A'/></svg>" />
+    <link rel="icon" type="image/png" href="/logo.png" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>WILDINTEL — India-First Multimodal Illegal Wildlife Trade Detection & Intelligence Platform</title>
-    <meta name="description" content="India-first Multimodal Illegal Wildlife Trade Detection & Intelligence Platform. AI-assisted text and image analysis for suspicious online listings, CITES taxonomy identification, and evidence-based forensic investigation." />
+    <title>SAMRAKSH — Vigilance for the Wild in the Digital Era</title>
+    <meta name="description" content="SAMRAKSH — Vigilance for the Wild in the Digital Era. India-first multimodal digital wildlife trade detection, biodiversity conservation, and investigative intelligence platform." />
     
     <!-- Google Fonts: Cormorant Garamond & Manrope -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&family=Manrope:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
   </head>
-  <body class="bg-[#F7F2E7] text-[#3A5A64] font-sans antialiased selection:bg-[#1FB6C9]/20 selection:text-[#0B3A4A] overflow-x-hidden">
+  <body class="bg-[#F7F2E7] text-[#3A5A64] font-sans antialiased overflow-x-hidden">
+    <div id="google_translate_element" style="display:none"></div>
     <div id="root"></div>
+    <script type="text/javascript">
+      window.googleTranslateElementInit = function() {
+        if (window.google && window.google.translate) {
+          new window.google.translate.TranslateElement({
+            pageLanguage: 'en',
+            includedLanguages: 'en,hi,es,fr,id',
+            autoDisplay: false
+          }, 'google_translate_element');
+        }
+      };
+    </script>
+    <script type="text/javascript" src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
     <script type="module" src="/src/main.tsx"></script>
   </body>
 </html>
